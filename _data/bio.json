@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Molly Maluhia",
+    "name": "Michael Rogers",
     "label": "Student",
-    "picture": "https://techfolios.github.io/template/images/molly.png",
-    "email": "molly@hawaii.edu",
-    "phone": "808-333-4444",
-    "website": "https://mmaluhia.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2020.",
+    "picture": "https://mlr77.github.io/template/images/mike0.png",
+    "email": "mlr2010@hawaii.edu",
+    "phone": "808-277-1793",
+    "website": "https://mlr77.github.io",
+    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2022.",
     "location": {
       "address": "",
-      "postalCode": "96822",
-      "city": "Honolulu",
+      "postalCode": "96789",
+      "city": "Mililani",
       "countryCode": "USA",
       "region": "Hawaii"
     },
