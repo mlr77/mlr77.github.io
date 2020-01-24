@@ -9,7 +9,7 @@ labels:
   - Procrastination
 ---
 
-<img class="ui tiny right spaced image" src="../images/nowlater_img.png">*Javascript: Now...or later?*
+<img class="ui tiny right spaced image" src="../images/Now-and-Later-Wrapper-Small.jpg">*Javascript: Now...or later?*
 
 ## What type of procrasinator are you? 
 
