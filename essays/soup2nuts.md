@@ -32,5 +32,9 @@ While my time in the military and my follow-on work did not directly relate to C
 
 Lucky for me, last year the VA graciously provided me with an opportunity to pursue a second degree in Computer Science at UH Manoa. As I enter my second year, I am getting close to finishing the mandatory courses needed to stretch my wings. Each class has been amazing thus far and I hope one day I can contribute back to the community. Personally, I am interested in Natural Language Processing and anything related to Data Science. Last semester, I took a Machine Learning class where we implemented some supervised and unsupervised learning models (KNN, k-Means, etc.) and we also had a brief introduction into Neural Networks.
 
-Why am I interested in Software Engineering? The feeling I get after watching this short Wall Street Journal <a href="https://www.youtube.com/watch?v=xxBc1c3uAJw">video</a> or other similarly inspirational videos probably sums up my thoughts better than words. I have some ideas one how to make the world a better place, one line of code at a time.  
+In the past year, I learned Assembly (x86), Java, Python (w/ numpy, pandas, sklearn, etc.), R. This year focuses on C, C++, HTML, CSS, Javascript, and MatLab for Linear Algebra, but I will probably devote some extra effort to strengthening the other languages as well. 
+
+Why am I interested in Software Engineering? The feeling I get after watching this short Wall Street Journal <a href="https://www.youtube.com/watch?v=xxBc1c3uAJw">video</a> or other similarly inspirational videos probably sums up my thoughts better than words. 
+
+Let's make the world a better place, one line of code at a time.  
 
