@@ -17,7 +17,7 @@ summary: Our team processed travel information for over 1 billion travelers in 2
 
 <div class="ui small rounded images">
   <img class="ui image" src="../images/airlines_img.png">
-  <img class="ui image" src="../images/proj2_model_img">
+  <img class="ui image" src="../images/proj2_model_img.png">
 </div>
 
 Words
@@ -38,14 +38,9 @@ words
 words
 words.
 
-Here is some code that illustrates how we read values from the line sensors:
+Here is some code that illustrates how easy it was to predict delays using our model:
 
 ```python
-import numpy as np
-
 predict_delay('01/23/2020 13:40:00', 'ASE', 'IAH')
 #sample output (Aspen, CO to Houston, TX, Departure 1:40PM, 87.5% chance of delay.)
 ```
-
-
-
