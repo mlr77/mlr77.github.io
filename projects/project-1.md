@@ -11,7 +11,7 @@ labels:
   - Javascript
   - Widgets
   - iBooks Author
-summary: A 380-page iBook co-authored with a former colleague after her school transitioned from PCs to Apple. The school issued MacBook Pros to the teachers and iPads to students. We worked on this project for about two months, roughly 4-6 hours daily until completion and used for teaching in a flipped classroom environment.   
+summary: A 380-page iBook co-authored with a former colleague after the language school transitioned from PCs to Apple. The school issued MacBook Pros to the teachers and iPads to students. We worked on this project for about two months, roughly 4-6 hours daily until completion, and the book was subsequently used for teaching in a flipped classroom environment.   
 ---
 
 <img class="ui medium right floated rounded image" src="../images/proj1_interactive_img.png">*This graphic shows what a typical layout looks like. This tool allowed us to change page styles to match certain lessons or keep them consistent throughout the book if needed.*
@@ -40,3 +40,7 @@ summary: A 380-page iBook co-authored with a former colleague after her school t
 I could probably write an entire book on the all the intricacies of the ISD process but I am sure someone has written something great already. 
 
 This was a fantastic side project and I was able to brush up on my Chinese while learning some new techonologies.
+
+
+
+
