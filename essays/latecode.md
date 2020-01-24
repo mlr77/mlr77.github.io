@@ -28,7 +28,7 @@ I may or may not be the best person to write about this topic as I, myself, am a
 
 Start writing. Sure, why not? Although, I did not complete every topic in this week's module, at least I can explain why I have yet to finish and perhaps by the time I finish walking you all through my thought process, together we can figure out the root cause. The key is to move forward. 
 
-Upon the realization Module 3 contains assignments due several days before Module 2 is finished, this was my process: 
+When I realized Module 3 contains assignments due several days before Module 2 is finished, this was my process: 
 
 ### Step 1. Take a look at the module and check out the readings. 
 
