@@ -12,20 +12,6 @@ labels:
 
 <img class="ui tiny left circular floated image" src="../images/ics_path_img.png">
 
-## The Wonder Years ---
-layout: essay
-type: essay
-title: Soup to Nuts
-# All dates must be YYYY-MM-DD format!
-date: 2020-01-23
-labels:
-  - Software Engineering
-  - Learning
-  - Career
----
-
-<img class="ui tiny left circular floated image" src="../images/ics_path_img.png">
-
 ## The Wonder Years 
 
 My story in Computer Science began over 30 years ago. I wrote my first program in elementary school back in the mid-80's where I attended public school in Mountain View, California. Similar to kids today, I grew up playing video games. The difference was that to play a game back then usually required some knowledge of DOS, and a slew of floppy disks. Whenever someone's family purchased a new computer, we would gather at that friend's house for months until the next upgrade came out. I remember rushing over to play Ultima on my friend's new i486 and getting a kick out of how fast the character darted across the screen. We had to underclock to be able to play. My character seemed so slow after that. Looking back, I would have expected myself to become a life-long computer geek, but after many twists and turns, I ultimately ended up in the military.
