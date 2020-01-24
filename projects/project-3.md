@@ -1,9 +1,9 @@
 ---
 layout: project
 type: project
-image: images/cotton-square.png
+image: images/tetris_img.png
 title: Cotton
-permalink: projects/cotton
+permalink: projects/tetrisclone
 # All dates must be YYYY-MM-DD format!
 date: 2019-04-30
 labels:
