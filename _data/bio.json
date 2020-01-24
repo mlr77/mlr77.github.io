@@ -74,82 +74,8 @@
       "studyType": "B.S.",
       "startDate": "2019-01-01",
       "endDate": "Present",
-      "gpa": "",
       "courses": [
       ]
     }
   ],
-  "work": [
-    {
-      "company": "The Garrett Group",
-      "position": "ISR Mission Manager/Liaison Officer",
-      "website": "https://www.pacom.mil/", "https://www.jcs.mil/",
-      "startDate": "07/2017",
-      "endDate": "07/2018",
-      "summary": "",
-      "highlights": [
-        "",
-        ""
-      ]
-    },
-    {
-      "company": "US Air Force",
-      "position": "Language Analyst",
-      "website": "",
-      "startDate": "04/1997",
-      "endDate": "04/2017",
-      "summary": "",
-      "highlights": [
-        "",
-        ""
-      ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "",
-      "website": "",
-      "position": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        "",
-        ""
-      ]
-    },
-    {
-      "organization": "",
-      "website": "",
-      "position": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        "",
-        "",
-        ""
-      ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "",
-      "date": "",
-      "awarder": "",
-      "summary": ""
-    },
-    {
-      "title": "",
-      "date": "",
-      "awarder": "",
-      "summary": ""
-    }
-  ],
-  "references": [
-    {
-      "name": "Available upon request",
-      "reference": ""
-    }
-  ]
 }
