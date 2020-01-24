@@ -32,7 +32,7 @@ Upon the realization Module 3 contains assignments due several days before Modul
 
 ### Step 1. Take a look at the module and check out the readings. 
 
-I love to read, and also the estimated "read time" is listed which makes it easy to manage my time. One of my favorite apps to read from, Medium (https://medium.com/), also has this great feature. A quick scan indicated the reading should only take about 30 minutes. Great. Unfortunately, all but one of the readings turned out to be videos. The actual reading material was a link to an e-book on Github. No, thank you. In all fairness, there were little tags describing each reading as either a screencast or reference manual. I did watch each of the videos and scanned the reference document just to get an idea if it will be useful in the future.
+I love to read, and also the estimated "read time" is listed which makes it easy to manage my time. One of my favorite apps to read from, <a href="https://medium.com/">Medium</a>, also has this great feature. A quick scan indicated the reading should only take about 30 minutes. Great. Unfortunately, all but one of the readings turned out to be videos. The actual reading material was a link to an e-book on Github. No, thank you. In all fairness, there were little tags describing each reading as either a screencast or reference manual. I did watch each of the videos and scanned the reference document just to get an idea if it will be useful in the future.
 
 ### Step 2. Get distracted.
 
@@ -50,14 +50,14 @@ Oh, I never really took a break yet. I got distracted and began fixing a few gra
 
 Let's face it. There was no process to begin with. The true first step is to admit we have a problem. As software engineers, we need to first identify the problem, and then come up with solutions to solve the problem. I admit I am a procrastinator. I did however, find a useful tool along the way. After watching the first practice WOD screencast, I downloaded the recommended an app for tracking time, called, "Thyme." I enjoy how simple it is and plan to use it to tackle the "10-hour" Intro to Javascript course. With any luck it will not take long to finish. 
 
-To learn more about the 4 types of procrastination, I recommend the following blog post: https://alphaefficiency.com/4-types-procrastination-beat/. Personally, I am leaning more toward this being a mental disorder. 
+(You can read more about the "4 types" of procrastination <a href="https://alphaefficiency.com/4-types-procrastination-beat/">here</a>.) 
 
 ### Two Days Later
 
-Okay, the time has come to wrap up this beautiful blob about Javascript. I actually thing Javascript is quite amazing. I have written three small programs without learning any particular syntax. As a beginner, the following three things are important: 
+Okay, the time has come to wrap up this essay about Javascript. I actually think Javascript is quite amazing. I have written three small programs without learning any particular syntax. As a beginner, the following three things are important: 
 
-1. Use let instead of var (which I never learned in the first place so it was not a problem)
+1. Use let instead of var
 2. To print, use the console.log() function
-3. There seem to be some "best practices" but syntax mistakes are easily forgiven
+3. There style preferences but syntax mistakes are easily forgiven
 
-Javascript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with Javascript. The most important takeaway is that we need to strive for greatness but appreciate the small victories. Thyme and JSFiddle for the win!
+Javascript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with Javascript. The most important takeaway is that we should strive for greatness, but take a moment to appreciate the small victories. Thyme and JSFiddle for the win!
