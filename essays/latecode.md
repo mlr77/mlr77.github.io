@@ -20,7 +20,7 @@ On day one of Software Engineering class, our professor warned the class about p
 * What is the root cause of procrastination?
 * Is procrastination a form of control? 
 
-Whether you feel procrastination is a phycological disorder or a curtail skill in life, I would bet each of us has experienced it in some form and many of us are routinely afflicted by it. More importantly, if not managed properly, procrastination will almost certainly negatively impact our performance when it comes to software engineering. 
+Whether you feel procrastination is a phycological disorder or a critical skill in life, I would bet each of us has experienced it in some form and many of us are routinely afflicted by it. More importantly, if not managed properly, procrastination will almost certainly negatively impact our performance when it comes to software engineering. 
 
 I may or may not be the best person to write about this topic as I, myself, am a recovering procrastinator. The struggle of finding something to write about is real. The deadline for our website and first writing assignment is upon us. 
 
