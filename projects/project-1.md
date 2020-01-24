@@ -23,11 +23,13 @@ summary: Our team processed travel information for over 1 billion travelers in 2
 
 # Tools Used
 
+Although this project designed to showcase skills we learned from our Probability and Statistics course (MATH 372), most of our team had more experience with Python rather than the recommended R. Also, through Google Drive and Colab (a Python Notebook collaborative tool), we were able to easily communite ideas and code.
+
 ### Python Notebook
 - Anaconda
 - Google Colab
 
-### Frameworks or libraries:
+### Frameworks/libraries:
 - sklearn
 - matplotlib
 - pandas
@@ -43,7 +45,6 @@ summary: Our team processed travel information for over 1 billion travelers in 2
 - https://archive.ics.uci.edu/ml/datasets.php
 - https://www.kaggle.com/datasets
 - https://toolbox.google.com/datasetsearch
-- https://www.datazar.com/project/pb615a433-bac3-4483-b80b-717ff6118a61/files
 - https://www.data.gov/
 - https://data.worldbank.org/
 - https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236
