@@ -36,28 +36,30 @@ I love to read, and also the estimated "read time" is listed which makes it easy
 
 ### Step 2. Get distracted.
 
-This is, in fact, a step in my process, as avoiding distractions is nearly impossible. Another piece of advice offered in class was to put our cell phones and other social media devices away so we are not distracted by them. Done. However, I still have about 20 web pages open, including linkedIn, Techhui, YouTube, JSFiddle, etc., and of course my Slack app continues to notify me of any new messages. After two days I finally realized where the noise was coming from. 
+This is, in fact, a step in my process, as avoiding distractions is nearly impossible. Another piece of advice offered in class was to put our cell phones and other social media devices away so we are not distracted by them. Done. However, I still have about 20 web pages open, including linkedIn, Techhui, YouTube, JSFiddle, etc., and of course my Slack app continues to notify me of any new messages. I am glad to discover the source of that clicking noise finally.
 
-As a master procrastinater, (yes, it almost rhymes and no, I do not believe in such things), I chose to get distracted for a few minutes and then press on. My "few minutes" turned out to be spent on wondering whether or not I should close all my web browser windows and shut down Slack. I decided against it because I may forget which sites were open and it will take more time to load them again.
+As a master procrastinater, (yes, it almost rhymes and no...just no), I chose to get distracted for a few minutes and then press on. My "few minutes" turned out to be spent on wondering whether or not I should close all my web browser windows and shut down Slack. I decided against it because I may forget which sites were open and it will take more time to load them again.
 
 ### Step 3. Take a break. 
 
-Of course! I just spent over 10 minutes getting distracted so it must be time for a break. When I come back I am sure that I will be refreshed and ready to continue. But, before I go, I want to take a look at the Module again to see how much is left to finish. It looks like WODs (Workout of the Day) practice algorithms will not take very long...but wait. What's this? I see another section tucked in the lower-left hand corner. It seems I will need to sign up for another course which should only take a maximum of 10 hours. Whoa. My proscrastination Spidey sense is tingling. Ugh, and now I have delayed my break.
+Of course! I just spent over 10 minutes getting distracted so it must be time for a break. When I come back I am sure that I will be refreshed and ready to continue. But, before I go, I want to take a look at the Module again to see how much is left to finish. It looks like Workout of the Day (WOD) practice algorithms will not take very long...but wait. What's this? I see another section tucked in the lower-left hand corner. It seems I will need to sign up for another course which should only take a maximum of 10 hours. Whoa. My proscrastination Spidey sense is tingling. Ugh, and now I have delayed my break.
 
 ### Step 4. Where was I? 
 
 Oh, I never really took a break yet. I got distracted and began fixing a few grammar errors. 
 
-Let's face it. There was no process to begin with. The true first step is to admit we have a problem. As software engineers, we need to first identify the problem, and then come up with solutions to solve the problem. I admit I am a procrastinator. I did however, find a useful tool along the way. After watching the first practice WOD screencast, I downloaded the recommended an app for tracking time, called, "Thyme." I enjoy how simple it is and plan to use it to tackle the "10-hour" Intro to Javascript course. With any luck it will not take long to finish. 
+Let's face it. There was no process to begin with. The true first step is to admit we have a problem. As software engineers, we need to first identify the problem, and then come up with solutions to solve the problem. I admit I am a procrastinator. I did however, find a useful tool along the way. After watching the first practice WOD screencast, I downloaded the recommended an app for tracking time, aptly called, "Thyme." I see what you did there. I enjoy how simple it is and plan to use it to tackle the Intro to Javascript course, extended version. With any luck it will not take long to finish. 
 
 (You can read more about the "4 types" of procrastination <a href="https://alphaefficiency.com/4-types-procrastination-beat/">here</a>.) 
 
 ### Two Days Later
 
-Okay, the time has come to wrap up this essay about Javascript. I actually think Javascript is quite amazing. I have written three small programs without learning any particular syntax. As a beginner, the following three things are important: 
+Okay, the time has come to wrap up this essay about Javascript. I actually feel Javascript is quite amazing. I have written a few small programs that all functioned properly and only needed a few samples to get started. As a beginner, the following three things are key: 
 
-1. Use let instead of var
+1. Use let instead of var (although Javascript does not get jealous if you call out the wrong name)
 2. To print, use the console.log() function
 3. There style preferences but syntax mistakes are easily forgiven
 
-Javascript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with Javascript. The most important takeaway is that we should strive for greatness, but take a moment to appreciate the small victories. Thyme and JSFiddle for the win!
+Javascript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with Javascript. The most important takeaway is that we should strive for greatness, but when you cannot be great, at least get something done and take a moment to appreciate the small victories. 
+
+Thyme and JSFiddle for the win!
