@@ -17,7 +17,6 @@ summary: Our team processed travel information for over 1 billion travelers in 2
 
 <div class="ui small rounded images">
   <img class="ui image" src="../images/proj2.png">
-  <img class="ui image" src="../images/proj2_model_img.png">
   <img class="ui image" src="../images/airlines_img.png">
 </div>
 
@@ -49,8 +48,11 @@ Although this project designed to showcase skills we learned from our Probabilit
 - https://www.data.gov/
 - https://data.worldbank.org/
 - https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236
-- https://catalog.data.gov/dataset/airline-on-time-performance-and-causes-of-flight-delays
 - https://www.bts.gov/topics/airlines-and-airports-0
+
+# Results
+
+<img class="ui image" src="../images/proj2_model_img.png">
 
 Most of flight delays can be attributed to three main factors. The leading factor is waiting on an
 aircraft that simply arrives late. The next is air carrier delay, which can be maintenance, cleaning,
@@ -64,9 +66,13 @@ traffic control.
 * Based on the data, the most likely airlines to have a delayed flight are (in order) : Southwest, American, SkyWest, Delta, United, and JetBlue.
 * Out of these airlines, SkyWest, Delta, United, and American have the longest delays. Therefore, they tend to be riskier airlines to choose a flight with if you’re on a time crunch
 
+# Sample Code
+
 Here is some code that illustrates how easy it was to predict delays using our model:
 
 ```python
 predict_delay('01/23/2020 13:40:00', 'ASE', 'IAH')
 #sample output (Aspen, CO to Houston, TX, Departure 1:40PM, 87.5% chance of delay.)
 ```
+# Github Repository
+* Will post code soon.
