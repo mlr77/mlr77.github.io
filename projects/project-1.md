@@ -14,7 +14,7 @@ labels:
 summary: A 380-page iBook co-authored with a former colleague after her school transitioned from PCs to Apple. The school issued MacBook Pros to the teachers and iPads to students. We worked on this project for about two months, roughly 4-6 hours daily until completion and used for teaching in a flipped classroom environment.   
 ---
 
-<img class="ui medium right floated rounded image" src="../images/proj1_interactive_img.png">
+<img class="ui medium right floated rounded image" src="../images/proj1_interactive_img.png">*This graphic shows what a typical layout looks like. We can change the page styles to match certain lessons or keep them consistent throughout the book if needed.*
 
 ## Design Considerations
 - iBooks Author offered layouts style multiple lessons/pages at once
@@ -37,6 +37,6 @@ summary: A 380-page iBook co-authored with a former colleague after her school t
 ## Complications
 - One of the biggest problems we encountered was the general lack of support for foreign language fonts. There were hacks to get certain fonts to appear but the setup of the school did not allow us to alter individual iPads very often. The main issue with fonts is that the iBooks Author used some fonts while iPads and iPhones used alternate fonts. This affected the layout of certain lessons and we were forced to redesign many pages to account for the inconsistancies.
 
-I could probably write an entire book on the all the intricacies of the Instructional Systems Design process for mobile/flipped classroom use but I am sure someone has written something already. 
+I could probably write an entire book on the all the intricacies of the ISD process but I am sure someone has written something great already. 
 
-It was such a fun project and we both learned so much throughout. Unfortunately, I cannot share the enter book here but 
+This was a fantastic side project and I was able to brush up on my Chinese while learning some new techonologies.
