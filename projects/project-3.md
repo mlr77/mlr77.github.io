@@ -14,9 +14,9 @@ labels:
 summary: A Tetris clone developed for ICS 111, Intro to Java.
 ---
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=m7jz075N9hU&feature=youtu.be "Video Title")
+[![Tetris Clone ICS 111](<img class="ui image" src="../images/tetris2_img.png">)](https://www.youtube.com/watch?v=m7jz075N9hU&feature=youtu.be "Video Title")
 
-https://www.youtube.com/watch?v=m7jz075N9hU&feature=youtu.be
+# Intro to Java - Final Project
 
 This was our team's final project, a Tetris Clone written in Java using EZ Graphics(@Dylan Kobayashi) using 1-3D arrays, arrayLists, etc. The classes included are Config.class, Tetris.class, and Main.class. We worked together mostly on debugging in one file and then separated the classes. We experimented with public and private settings, and used the ICS 111 Bubble example to help remove EZ elements so the Tetris pieces could move freely without hogging too many resources. 
 
