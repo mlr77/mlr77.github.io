@@ -9,7 +9,8 @@ labels:
   - Procrastination
 ---
 
-<img class="ui tiny right spaced image" src="../images/nowlater_img.png">*Difficulty: a thing that is hard to accomplish, deal with, or understand.*
+<img class="ui tiny right spaced image" src="../images/nowlater_img.png">
+*Javascript: Now...or later?*
 
 ## What type of procrasinator are you? 
 
