@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: Life's Big-O
+title: Soup to Nuts
 # All dates must be YYYY-MM-DD format!
 date: 2020-01-23
 labels:
@@ -11,6 +11,8 @@ labels:
 ---
 
 <img class="ui tiny left circular floated image" src="../images/ics_path_img.png">
+
+<h1>Humble Beginnings</h1> 
 
 My story in Computer Science began over 30 years ago. I wrote my first program in elementary school back in the mid-80's. I attended public school in Mountain View, California and like the youth of today, most of us grew up playing video games. The difference was that to play a game back then usually required some knowldege of DOS, and a slew of floppy disks. Whenever someone's family purchaced a new computer, we would gather at that friend's house for months until the next upgrade came out. I remember rushing over to play Ultima on my friend's new i486 and getting a kick out of how fast the character darted across the screen. We had to underclock it to be able to play. My vesion of the game was just lame thereafter. Nevertheless, my upbringing should have led me to be a computer geek for life, but after many twists and turns, ironically, I ended up in the military.
 
@@ -24,9 +26,5 @@ While my time in the military and my follow-on work did not directly relate to C
 
 Lucky for me, I got the opportunity to pursue a second degree in Computer Science at UH Manoa. As I enter my second year, I am just about finished with the mandatory courses needed to stretch my wings. Each class has been amazing thus far and I hope one day I can contribute back to the community. Personally, I am interested in Natural Language Processing and anything related to Data Science. Last semester, I took a Machine Learning class where we implemented some supervised and unsupervised learning models (KNN, k-Means, etc.) and we also had a brief introduction into Neural Networks.
 
-Why Software Engineering? 
-
-<img class="ui tiny left circular floated image" src="../images/design-technology.jpg">
-
-<img class="ui tiny left circular floated image" src="../images/software-code.jpg">
+Why am I interested in Software Engineering? This YouTube<a href="https://www.youtube.com/watch?v=xxBc1c3uAJw">video</a> sums up my thoughts. If it's not inspiring to you then maybe . 
 
