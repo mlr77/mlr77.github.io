@@ -36,5 +36,7 @@ In the past year, I learned Assembly (x86), Java, Python (w/ numpy, pandas, skle
 
 Why am I interested in Software Engineering? The feeling I get after watching this short Wall Street Journal <a href="https://www.youtube.com/watch?v=xxBc1c3uAJw">video</a> or other similarly inspirational videos probably sums up my thoughts better than words. 
 
-Let's make the world a better place, one line of code at a time.  
+Let's make the world a better place, one line of code at a time. (I swear I did not rip that off but someone from freeCodeCamp has used a <a href="https://www.freecodecamp.org/news/change-the-world-one-line-of-code-at-a-time-5162b229f35e/">similar quote</a> already!)  
+
+By the way, not sure if anyone noticed but I have been practicing my hrefs throughout. Thank you for your patience.
 
