@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/tetris_img.png
-title: Cotton
+title: Tetris Clone
 permalink: projects/tetrisclone
 # All dates must be YYYY-MM-DD format!
 date: 2019-04-30
