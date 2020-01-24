@@ -1,9 +1,9 @@
 ---
 layout: essay
 type: essay
-title: The difficult things will always be difficult
+title: Delayed Codification
 # All dates must be YYYY-MM-DD format!
-date: Delayed Gratification
+date: 2020-01-23
 labels:
   - Javascript
   - Procrastination
@@ -15,37 +15,49 @@ labels:
 
 On day one of Software Engineering class, our professor warned the class about procrastination, describing it as a type of fear. The dictionary offers a less abstract notion, defining it as the act of delaying or postponing something, and a quick Google search shows "people also ask" the following common questions: 
 
-  - Is procrastination a mental illness?
-  - What are the 4 types of procrastinators?
-  - What is the root cause of procrastination?
-  - Is procrastination a form of control? 
+* Is procrastination a mental illness?
+* What are the 4 types of procrastinators?
+* What is the root cause of procrastination?
+* Is procrastination a form of control? 
 
-Whether you feel procrastination is a phychological disorder or a crutial skill in life, I would bet each of us has experienced it in some form and many of us are routinely afflicted by it. More importantly, if not handled properly, procrastination will almost certainly negatively impact our performance as future software engineers. 
+Whether you feel procrastination is a phychological disorder or a crutial skill in life, I would bet each of us has experienced it in some form and many of us are routinely afflicted by it. More importantly, if not managed properly, procrastination will almost certainly negatively impact our performance when it comes to software engineering. 
 
-I may or may not be the best person to write about this topic as I am a recovering procrastinator. The struggle of finding something to write about is real. The deadline for our website and first writing assignment quickly approaches. The essay is almost due, along with a myriad of other assignments and I have yet to finish the module. What to do? **** rewrite
+I may or may not be the best person to write about this topic as I, myself, am a recovering procrastinator. The struggle of finding something to write about is real. The deadline for our website and first writing assignment is upon us. 
 
-Start writing. Sure, why not? Although, I did not complete the module, at least I can explain why I have yet to finish and perhaps by the time I finish walking you all through my thought process, together we can figure out the root cause. 
+## What to do?
+
+Start writing. Sure, why not? Although, I did not complete every topic in this week's module, at least I can explain why I have yet to finish and perhaps by the time I finish walking you all through my thought process, together we can figure out the root cause. The key is to move forward. 
 
 Upon the realization Module 3 contains assignments due several days before Module 2 is finished, this was my process: 
 
-Step 1. Take a look at the module and check out the readings. 
+### Step 1. Take a look at the module and check out the readings. 
 
 I love to read, and also the estimated "read time" is listed which makes it easy to manage my time. One of my favorite apps to read from, Medium (https://medium.com/), also has this great feature. A quick scan indicated the reading should only take about 30 minutes. Great. Unfortunately, all but one of the readings turned out to be videos. The actual reading material was a link to an e-book on Github. No, thank you. In all fairness, there were little tags describing each reading as either a screencast or reference manual. I did watch each of the videos and scanned the reference document just to get an idea if it will be useful in the future.
 
-Step 2. Get distracted.
+### Step 2. Get distracted.
 
 This is, in fact, a step in my process, as avoiding distractions is nearly impossible. Another piece of advice offered in class was to put our cell phones and other social media devices away so we are not distracted by them. Done. However, I still have about 20 web pages open, including linkedIn, Techhui, YouTube, JSFiddle, etc., and of course my Slack app continues to notify me of any new messages. After two days I finally realized where the noise was coming from. 
 
-As a master procrastinater, (yes, it almost rhymes and no, it does not exist IRL), I chose to get distracted for a few minutes and then press on. My "few minutes" turned out to be spent on wondering whether or not I should close all my web browser windows and shut down Slack. I decided against it because I may forget which sites were open and it will take more time to load them again.
+As a master procrastinater, (yes, it almost rhymes and no, I do not believe in such things), I chose to get distracted for a few minutes and then press on. My "few minutes" turned out to be spent on wondering whether or not I should close all my web browser windows and shut down Slack. I decided against it because I may forget which sites were open and it will take more time to load them again.
 
-Step 3. Take a break. 
+### Step 3. Take a break. 
 
 Of course! I just spent over 10 minutes getting distracted so it must be time for a break. When I come back I am sure that I will be refreshed and ready to continue. But, before I go, I want to take a look at the Module again to see how much is left to finish. It looks like WODs (Workout of the Day) practice algorithms will not take very long...but wait. What's this? I see another section tucked in the lower-left hand corner. It seems I will need to sign up for another course which should only take a maximum of 10 hours. Whoa. My proscrastination Spidey sense is tingling. Ugh, and now I have delayed my break.
 
-Step 4. Where was I? 
+### Step 4. Where was I? 
 
-Oh, I never really took a break yet. I got distracted and began fixin a few grammar errors. 
+Oh, I never really took a break yet. I got distracted and began fixing a few grammar errors. 
 
 Let's face it. There was no process to begin with. The true first step is to admit we have a problem. As software engineers, we need to first identify the problem, and then come up with solutions to solve the problem. I admit I am a procrastinator. I did however, find a useful tool along the way. After watching the first practice WOD screencast, I downloaded the recommended an app for tracking time, called, "Thyme." I enjoy how simple it is and plan to use it to tackle the "10-hour" Intro to Javascript course. With any luck it will not take long to finish. 
 
 To learn more about the 4 types of procrastination, I recommend the following blog post: https://alphaefficiency.com/4-types-procrastination-beat/. Personally, I am leaning more toward this being a mental disorder. 
+
+### Two Days Later
+
+Okay, the time has come to wrap up this beautiful blob about Javascript. I actually thing Javascript is quite amazing. I have written three small programs without learning any particular syntax. As a beginner, the following three things are important: 
+
+1. Use let instead of var (which I never learned in the first place so it was not a problem)
+2. To print, use the console.log() function
+3. There seem to be some "best practices" but syntax mistakes are easily forgiven
+
+Javascript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with Javascript. The most important takeaway is that we need to strive for greatness but appreciate the small victories. Thyme and JSFiddle for the win!
