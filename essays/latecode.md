@@ -38,7 +38,7 @@ I love to read, and also the estimated "read time" is listed which makes it easy
 
 This is, in fact, a step in my process, as avoiding distractions is nearly impossible. Another piece of advice offered in class was to put our cell phones and other social media devices away, so we are not distracted by them. Done. However, I still have about 20 web pages open, including LinkedIn, Techhui, YouTube, JSFiddle, etc., and of course my Slack app continues to notify me of any new messages. I am glad to discover the source of that clicking noise finally.
 
-As a master procrastinator, (yes, it almost rhymes and no... just no), I chose to get distracted for a few minutes and then press on. My "few minutes" turned out to be spent on wondering whether or not I should close all my web browser windows and shut down Slack. I decided against it because I may forget which sites were open and it will take more time to load them again.
+As a master procrastinator, (yes, it almost rhymes), I chose to get distracted for a few minutes and then press on. My "few minutes" turned out to be spent on wondering whether or not I should close all my web browser windows and shut down Slack. I decided against it because I may forget which sites were open and it will take more time to load them again.
 
 ### Step 3. Take a break. 
 
@@ -58,7 +58,7 @@ Okay, the time has come to wrap up this essay about JavaScript. I actually feel 
 
 1. Use let instead of var (although JavaScript does not get jealous if you call out the wrong name)
 2. To print, use the console.log() function
-3. There are style preferences but syntax mistakes are easily forgiven
+3. There are style preferences, but syntax mistakes are easily forgiven
 
 JavaScript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with JavaScript. The most important takeaway is that we should strive for greatness, but when you cannot be great, at least get something done and take a moment to appreciate the small victories. 
 
