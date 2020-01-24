@@ -16,8 +16,9 @@ summary: Our team processed travel information for over 1 billion travelers in 2
 ---
 
 <div class="ui small rounded images">
-  <img class="ui image" src="../images/airlines_img.png">
+  <img class="ui image" src="../images/proj2.png">
   <img class="ui image" src="../images/proj2_model_img.png">
+  <img class="ui image" src="../images/airlines_img.png">
 </div>
 
 
