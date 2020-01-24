@@ -14,7 +14,7 @@ labels:
 summary: A Tetris clone developed for ICS 111, Intro to Java.
 ---
 
-[![Tetris Clone ICS 111](https://github.com/mlr77/mlr77.github.io/blob/master/images/tetris2_img.png)](https://www.youtube.com/watch?v=m7jz075N9hU&feature=youtu.be "Video Title")
+[![Project YouTube video](https://github.com/mlr77/mlr77.github.io/blob/master/images/tetris2_img.png)](https://www.youtube.com/watch?v=m7jz075N9hU&feature=youtu.be "Tetris Clone")
 
 # Intro to Java - Final Project
 
