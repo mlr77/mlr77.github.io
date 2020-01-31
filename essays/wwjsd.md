@@ -77,7 +77,7 @@ In this case, the details of each question were less important than the overall 
 If you really REALLY want your questions answered, and quickly, you might want to check out the types of questions answered by these users: 
 
 |	User Link	 | Average Response Time |
-|:-----------|-----------------------:|
+|:-----------|:-----------------------:|
 |	[Zbigniew](https://stackoverflow.com/users/1441894) | 00:02:48 |
 |	[Suren Srapyan](https://stackoverflow.com/users/5496973) | 00:03:05 |
 |	[John Conde](https://stackoverflow.com/users/250259) | 00:03:12 |
@@ -90,3 +90,19 @@ If you really REALLY want your questions answered, and quickly, you might want t
 |	[Kamil Budziewski](https://stackoverflow.com/users/1714342)| 00:03:31 |
 
 *Go ahead, check out what types of questions Doorknob answers. 
+
+## High Standards - Top 100 Users that rarely upvote
+
+Okay, this headline did not sound related to good or bad questions, but I found it interesting and it tied into my next search so ran the query. There are some fairly elite users out there that post regurlary but very rarely upvote. [Eric Lippert](https://stackoverflow.com/users/88656/eric-lippert) is at the top of the list. I decided to check out his profile to see what might make him tick. He is a Software Engineer at Facebook and most of his most popular posts seem to be answers rather than questions. However, if you are in need of expert advice, feel free to click on his popular answers to see what types of questions Eric is willing to field. Nine of his top ten posts are responses to valid questions. That takes us to the next query.
+
+## Find interesting unanswered questions
+
+This is an exciting query. It accepts a userid as a parameter and retrieves a list of questions that have never been answered, but that of which are similar in nature to other questions user typically answers. I then used Eric's userid, 88656, to run the query and found a list of topics which he might be inclined to answer, if the questions had been more carefully crafted, perhaps. The post "setTextContents Pinvoke C#," written by userid 2679456 (aka Scott Jasin) is one such question. He used double question marks, profanity, and some exclamation marks. Why then, did no one answer??? I noticed he had a number of other posts left unanswered as well, none of which were titled with actual questions btw.
+
+## Jon Skeet comparison
+
+In summary, we sifted through the good, the bad, and the ugly found on StackOverflow and in the end, there is no perfect answer. The thing to remember is to pay attention to how the successful people do things, follow their lead, or try to be better, but most importantly, do your research! And when in doubt, seek out Jon Skeet, the top ranked StackOverlfow guru with a reputation score of 1,160,345 at the time of this post. He is a software engineer at Google so he's probably doing something right. The "Jon Skeet comparison" query allows you to compare yourself to him if you punch in your userid. Why? Ask someone this question on StackOverflow, see if you get an answer.
+
+Good luck!
+
+
