@@ -45,7 +45,7 @@ While I had Python opened and the simple code to make the first graph already up
 
 What constitutes a bad question? 
 
-Not surprisingly, most of the posts with three words or less have very low scores. This is clue number one. If you only post three words, why would anyone spend more than one second to answer. Time is valuable and most people want to avoid wasting their time, especially if your question winds up being as bad as the title. There was one post, however, that stood out from the rest. It was actually posted 10 years ago and was titled, “[TFS vs SVN](https://stackoverflow.com/questions/661389/tfs-vs-svn).” It had about 59 upvotes but was subsequently closed by moderators for being opinion-based. This is another no-nos. 
+Not surprisingly, most of the posts with three words or less have very low scores. This is clue number one. If you only post three words, why would anyone spend more than one second to answer. Time is valuable and most people want to avoid wasting their time, especially if your question winds up being as bad as the title. There was one post, however, that stood out from the rest. It was actually posted 10 years ago and was titled, “[TFS vs SVN](https://stackoverflow.com/questions/661389/tfs-vs-svn).” It had about 59 upvotes but was subsequently closed by moderators for being opinion-based. This is another one of the no-nos. 
 
 ## Most Down-Voted Questions
 
