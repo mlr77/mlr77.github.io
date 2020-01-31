@@ -59,14 +59,34 @@ For an example of a good question, I decided to look at users that commonly post
 
 ### How Do I…
 
-What is the best question? I do not have the answer for that but some of the best are found in the next anonymously written query. I forked the query and changed the CreationDate to date back to 2010. 
+What is the best question? I do not have the answer for that but some of the best are found in the next anonymously written query. I forked the query and changed the CreationDate to start searching from to 2010. 
 
 Here is an example of the code: 
 ```SQL
-SELECT TOP 200 ViewCount, Id AS [Post Link], Tags, Title, AnswerCount, CreationDate
+SELECT TOP 200 ViewCount, Id AS [Post Link],
+               Tags, Title, AnswerCount, 
+               CreationDate
 FROM Posts 
 where CreationDate > '2010/01/01'
 ORDER BY ViewCount DESC;
 ```
 In this case, the details of each question were less important than the overall theme. The all time winner of question views dating back to January, 2010, was phrased, “How do I delete a Git branch locally and remotely?” In fact, seven of the top ten most-viewed questions start with the three little words, “<strong>How do I…</strong>” (eight if you count “How to.” If you really want your questions answered, try first asking a question. It is a good starting point. 
 
+## Fastest Guns in the West
+
+If you really REALLY want your questions answered, and quickly, you might want to check out the types of questions answered by these users: 
+
+|	User Link	 | Average Response Time |
+|:-----------|-----------------------:|
+|	[Zbigniew](https://stackoverflow.com/users/1441894) | 00:02:48 |
+|	[Suren Srapyan](https://stackoverflow.com/users/5496973) | 00:03:05 |
+|	[John Conde](https://stackoverflow.com/users/250259) | 00:03:12 |
+|	[Kon](https://stackoverflow.com/users/2472820) | 00:03:17 |
+|	[Daniel A. White](https://stackoverflow.com/users/23528) | 00:03:27 |
+|	[Adil](https://stackoverflow.com/users/1298762) | 00:03:29 |
+|	[antyrat](https://stackoverflow.com/users/186535) | 00:03:30 |
+|	[Doorknob](https://stackoverflow.com/users/1223693) | 00:03:30 |
+|	[jeurgen d](https://stackoverflow.com/users/575376) | 00:03:31 |
+|	[Kamil Budziewski](https://stackoverflow.com/users/1714342)| 00:03:31 |
+
+*Go ahead, check out what types of questions Doorknob answers. 
