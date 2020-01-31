@@ -70,8 +70,11 @@ traffic control.
 Here is some code that illustrates how easy it was to predict delays using our model:
 
 ```python
-predict_delay('01/23/2020 13:40:00', 'ASE', 'IAH')
-#sample output (Aspen, CO to Houston, TX, Departure 1:40PM, 87.5% chance of delay.)
+predict_delay('01/23/2020 13:40:00', 
+              'ASE', 
+              'IAH')
+#sample output (Aspen, 
+                CO to Houston, TX, 
+                Departure 1:40PM, 
+                87.5% chance of delay.)
 ```
-# Github Repository
-* Will post code soon.
