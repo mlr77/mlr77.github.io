@@ -41,7 +41,7 @@ This is a quick and dirty query that produced a timeline .csv file. Looking at t
 <img class="ui medium right floated rounded image" src="../images/responsetime.png">
 While I had Python opened and the simple code to make the first graph already up, I decided to download another file and take a look at the average response time over the years. Its curiously stable. The blue line indicates the average time it takes to get an answer is less than 20 hours. However, the standard deviation is quite large so do not be surprised if you need to wait a bit longer. That said, if it has been over a day, or worse, over a week, and your question has some views with no answers, it might mean you need to 1) search for a solution elsewhere, or 2) reword your bad question.
 
-## Posts containing a very short title</h2>
+## Posts containing a very short title
 
 What constitutes a bad question? 
 
