@@ -34,10 +34,8 @@ I first looked for some interesting sounding query titles. Here are some example
 - Jon Skeet comparison
 
 ## Good Questions vs. Bad Questions Ratio
-
-This is a quick and dirty query that produced a timeline .csv file. Looking at the numbers might not be exciting for everyone so I downloaded the file and whipped out my Python notebook to quickly make this rudimentary graph. It is pretty apparent that the ratio of good-to-bad questions has plummeted over the years. I have a few guesses as to why it may be but we might have to dig a bit deeper to find out. My hunch is that the site began with mostly professionals (asking “good” questions) and blew up exponentially as people began finding answers via Google search. 
-
 <img class="ui medium right floated rounded image" src="../images/goodbadratio.png">
+This is a quick and dirty query that produced a timeline .csv file. Looking at the numbers might not be exciting for everyone so I downloaded the file and whipped out my Python notebook to quickly make this rudimentary graph. It is pretty apparent that the ratio of good-to-bad questions has plummeted over the years. I have a few guesses as to why it may be but we might have to dig a bit deeper to find out. My hunch is that the site began with mostly professionals (asking “good” questions) and blew up exponentially as people began finding answers via Google search. 
 
 <h2>Time to Answer</h2>
 
