@@ -38,10 +38,8 @@ I first looked for some interesting sounding query titles. Here are some example
 This is a quick and dirty query that produced a timeline .csv file. Looking at the numbers might not be exciting for everyone so I downloaded the file and whipped out my Python notebook to quickly make this rudimentary graph. It is pretty apparent that the ratio of good-to-bad questions has plummeted over the years. I have a few guesses as to why it may be but we might have to dig a bit deeper to find out. My hunch is that the site began with mostly professionals (asking “good” questions) and blew up exponentially as people began finding answers via Google search. 
 
 ## Time to Answer
-
-While I had Python opened and the simple code to make the first graph already up, I decided to download another file and take a look at the average response time over the years. Its curiously stable. The blue line indicates the average time it takes to get an answer is less than 20 hours. However, the standard deviation is quite large so do not be surprised if you need to wait a bit longer. That said, if it has been over a day, or worse, over a week, and your question has some views with no answers, it might mean you need to 1) search for a solution elsewhere, or 2) reword your bad question.
-
 <img class="ui medium right floated rounded image" src="../images/responsetime.png">
+While I had Python opened and the simple code to make the first graph already up, I decided to download another file and take a look at the average response time over the years. Its curiously stable. The blue line indicates the average time it takes to get an answer is less than 20 hours. However, the standard deviation is quite large so do not be surprised if you need to wait a bit longer. That said, if it has been over a day, or worse, over a week, and your question has some views with no answers, it might mean you need to 1) search for a solution elsewhere, or 2) reword your bad question.
 
 ## Posts containing a very short title</h2>
 
@@ -70,5 +68,5 @@ FROM Posts
 where CreationDate > '2010/01/01'
 ORDER BY ViewCount DESC;
 ```
-
+In this case, the details of each question were less important than the overall theme. The all time winner of question views dating back to January, 2010, was phrased, “How do I delete a Git branch locally and remotely?” In fact, seven of the top ten most-viewed questions start with the three little words, “<strong>How do I…</strong>” (eight if you count “How to.” If you really want your questions answered, try first asking a question. It is a good starting point. 
 
