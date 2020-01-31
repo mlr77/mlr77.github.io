@@ -12,6 +12,18 @@ labels:
   - Kaggle
   - Sklearn
   - Random Forest Classifiers
+  - Python Notebook
+  - Anaconda
+  - Google Colab
+  - sklearn
+  - matplotlib
+  - pandas
+  - numpy
+  - seaborn
+  - scipy
+  - XGBoost
+  - Catboost
+  - LightGBM
 summary: Our team processed travel information for over 1 billion travelers in 2018 and developed a model to predict probability of delay based on origin, destination, and date/time of travel. The goal was to develop a system for frequent fliers to better manage their travel schedules.
 ---
 
@@ -23,21 +35,6 @@ summary: Our team processed travel information for over 1 billion travelers in 2
 # Tools Used
 
 Although this project designed to showcase skills we learned from our Probability and Statistics course (MATH 372), most of our team had more experience with Python rather than the recommended R. Also, through Google Drive and Colab (a Python Notebook collaborative tool), we were able to easily communite ideas and code.
-
-### Python Notebook
-- Anaconda
-- Google Colab
-
-### Frameworks/libraries:
-- sklearn
-- matplotlib
-- pandas
-- numpy
-- seaborn
-- scipy
-- XGBoost
-- Catboost
-- LightGBM
 
 ### Dataset repositories:
 - https://opendata.socrata.com/
