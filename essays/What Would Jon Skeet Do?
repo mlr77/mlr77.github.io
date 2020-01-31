@@ -1,4 +1,3 @@
-
 ---
 layout: essay
 type: essay
@@ -9,7 +8,6 @@ labels:
   - StackOverflow
   - StackExchange
   - Python
-  - 
 ---
 
 <img class="ui tiny right spaced image" src="../images/.jpg">*Javascript: Now...or later?*
