@@ -9,7 +9,7 @@ labels:
   - Procrastination
 ---
 
-<img class="ui tiny right spaced image" src="../images/Now-and-Later-Wrapper-Small.jpg">*Javascript: Now...or later?*
+<img class="ui right spaced image" src="../images/Now-and-Later-Wrapper-Small.jpg">*Javascript: Now...or later?*
 
 ## What type of procrastinator are you? 
 
@@ -54,12 +54,12 @@ Let's face it. There was no process to begin with. The true first step is to adm
 
 ### Two Days Later
 
-Okay, the time has come to wrap up this essay about JavaScript. I actually feel JavaScript is quite amazing. I have written a few small programs that all functioned properly and only needed a few samples to get started. As a beginner, the following three things are key: 
+Okay, the time has come to wrap up this post about JavaScript. I actually feel JavaScript is quite amazing. I have written a few small programs that all functioned properly and only needed a few samples to get started. As a beginner, the following three things are key:
 
-1. Use let instead of var (although JavaScript does not get jealous if you call out the wrong name)
+1. Use let or const instead of var (although JavaScript does not get jealous if you call out the wrong name)
 2. To print, use the console.log() function
 3. There are style preferences, but syntax mistakes are easily forgiven
 
-JavaScript is pretty much synonymous with the internet, where almost anything is possible. And while it seems this essay is a little all over the place, I think it is in line with JavaScript. The most important takeaway is that we should strive for greatness, but when you cannot be great, at least get something done and take a moment to appreciate the small victories. 
+JavaScript is like a fantasy programming language, where almost anything is possible. And while it seems this post is a little all over the place, I think it is in line with my coding in JavaScript at this point. I still have so much to learn. The most important takeaway for me has been that I accomplished something, and it is time to take a moment to appreciate the small victories. 
 
-Thyme and JSFiddle for the win!
+Thyme and JSFiddle for the win! 
