@@ -27,9 +27,7 @@ labels:
 summary: Our four-person team processed travel information for over 1 billion travelers in 2018 and developed a model to predict probability of delay based on origin, destination, and date/time of travel. The goal was to develop a system for frequent fliers to better manage their travel schedules.
 ---
 
-<div class="ui small rounded images">
-  <img class="ui image" src="../images/proj2.png">
-</div>
+<img class="ui medium right floated rounded image" src="../images/proj2.png">
 
 Our four-person team processed travel information for over 1 billion travelers in 2018 and developed a model to predict probability of delay based on origin, destination, and date/time of travel. The goal was to develop a system for frequent fliers to better manage their travel schedules.
 
