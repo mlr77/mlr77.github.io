@@ -79,9 +79,13 @@ I gained valuable experience finding and pre-processing large datasets, building
 
 WHere are a few snapshots from the EDA stage: 
 
-<img class="ui image" src="../images/dataset.png">
+<img class="ui image" src="../images/delaydates.png">
 
 <img class="ui image" src="../images/flightroutes.png">
 
 <img class="ui image" src="../images/delaytimes.png">
+
+<img class="ui image" src="../images/delaybydate.png">
+
+
 
