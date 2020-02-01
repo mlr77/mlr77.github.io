@@ -77,7 +77,7 @@ predict_delay('01/23/2020 13:40:00',
 
 I gained valuable experience finding and pre-processing large datasets, building charts and graphs for exploratory data analysis (EDA), and choosing the best prediction model for the job. I used one Python notebook for EDA, and then used a separate notebook to test different models. Ultimately, I picked a random forest classifier and acheived decent results. The whole project took about two weeks to put together after planning and discussing options for a month. 
 
-WHere are a few snapshots from the EDA stage: 
+Below are a few snapshots from the EDA stage: 
 
 <img class="ui image" src="../images/delaydates.png">
 
