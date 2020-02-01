@@ -87,5 +87,7 @@ Below are a few snapshots from the EDA stage:
 
 <img class="ui image" src="../images/delaybydate.png">
 
+You can check out the prediction model [code here](https://github.com/mlr77/flightdelays/blob/master/December2018Model.ipynb)
+
 
 
