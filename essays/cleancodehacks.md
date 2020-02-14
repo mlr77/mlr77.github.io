@@ -33,7 +33,7 @@ function countOccurrences1(str)
 }
 ```
 
-<h4>to this (accepted by ESLint but one bracket still appears off):</h4>
+<h4>...to this (accepted by ESLint but one bracket still appears off):</h4>
 
 ```js
 function countOccurrences1(str) {
@@ -47,7 +47,7 @@ function countOccurrences1(str) {
 }
 ```
 
-<h4>and finally one manual touch-up: </h4>
+<h4>...and finally one manual touch-up: </h4>
 
 ```js
 function countOccurrences1(str) {
