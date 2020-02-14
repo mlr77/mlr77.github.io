@@ -19,6 +19,7 @@ Implementing coding standards with ESLint in IntelliJ is similar. Enforcing codi
 <h4>Within seconds, using a few of IntelliJ's shortcut keys (option-Return, then choose fix file), code can go from looking like this: </h4>
 
 <img class="ui small right floated rounded image" src="../images/messyroom.png">
+
 ```js
 function countOccurrences1(str)
 {
@@ -63,6 +64,7 @@ function countOccurrences1(str) {
   } return counts;
 }
 ```
+
 <h4>Even better, write the code using the underscore.js library and it begins like this:</h4>
 
 ```js
@@ -72,6 +74,6 @@ function countOccurrences2(str) {
 ```
 <h4>And since there are no problems, ESLint is happy.</h4>
 
-<h4>Both functions produced the same output: {e: 3, n: 3, g: 2, i: 2, r: 1}</h4>
+<h4>Both functions produce identical output!</h4>
 
 My coding style was riddled with spacing issues, misplaced brackets, and missing semi-colons. Although the functions ran the same, they were difficult to read, especially if you are used to a certain style. I found that after writing just a few simple functions, I began to prefer the new style and immediately adjusted accordingly. Without some type of standard, the code becomes messy and unreadable, and worse yet, prone to errors. Therefore, I fully support using linters such as ESLint, Integrated Development Environments (IDEs) such as IntelliJ, and for better, more concise and readable code, Underscore.js. Most importantly, these tools can and will help improve coding speed. Unfortunately, they cannot help with writing. Happy coding...
