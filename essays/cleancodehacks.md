@@ -69,7 +69,7 @@ function countOccurrences2(str) {
   return _.countBy(str);
 }
 ```
-And there are no problems. 
+<h4>And since there are no problems, ESLint is happy.</h4>
 
 <h4>Both functions produced the same output: {e: 3, n: 3, g: 2, i: 2, r: 1}</h4>
 
