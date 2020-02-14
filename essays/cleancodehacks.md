@@ -31,7 +31,7 @@ function countOccurrences1(str)
 }
 ```
 to this (accepted by ESLint but one bracket still appears off):
-```JavaScript
+```js
 function countOccurrences1(str) {
   const counts = {};
   for (let i = 0; i < str.length; i++) {
@@ -43,7 +43,7 @@ function countOccurrences1(str) {
 }
 ```
 and finally one manual touch-up: 
-```Javascript
+```js
 function countOccurrences1(str) {
   const counts = {};
   for (let i = 0; i < str.length; i++) {
@@ -57,7 +57,7 @@ function countOccurrences1(str) {
 }
 ```
 Even better, write the code using the underscore.js library and it begins like this:
-```javascript
+```js
 function countOccurrences2(str) {
   return _.countBy(str);
 }
