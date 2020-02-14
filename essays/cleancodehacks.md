@@ -12,6 +12,8 @@ labels:
   - Underscore.js
 ---
 
+<img class="ui small right floated rounded image" src="../images/messyroom.png">
+
 If you have ever taken a typing test, you will quickly realize a mistyped character decreases the typing "speed" dramatically. For example, if you do not correct your mistake, the program usually will dock time, and if you take the time to hit backspace and correct your mistake, or worse, use the mouse to fix a mistake, it will cost you loads of time. With only one minute on the clock in most cases, you may see your score drop from 60 words per minute (wpm) to 40 wpm. I once had to take a typing test for a job and I recall practicing over and over to type perfectly, rather than fixating on the actual speed of my typing. What is actually happening here? Are you getting faster at typing? Not necessarily, but avoiding uncessary mistakes will certainly save time and in the end will produce not only a better score, but correct results. The point of a typing test is not to see how quickly your fingers move, afterall. 
 
 Implementing coding standards with ESLint in IntelliJ is similar. Enforcing coding standards with these tools is a great way to practice getting things right the first time. Reducing workflow costs through coding standards and keyboard shortcuts saves time and allows for more efficient programming. 
