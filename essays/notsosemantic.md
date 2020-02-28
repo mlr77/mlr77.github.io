@@ -18,7 +18,7 @@ While Semantic UI offers a unique way to build a fairly nice looking website, re
 ***
 ### Navigation Bar Formatting
 
-The nav bar is generally very easy to build. I began by copying the Roblox logo (actually I hotlinked it to make it even easier). Then using Semantic UI, I built the following menu:
+The nav bar is generally very easy to build. I began by copying the Roblox logo (actually, I cheated and just hotlinked it). Then using Semantic UI, I built the following menu:
 ```html
 <!-- Fixed navbar at the top with ROBLOX logo -->
 <nav class='ui menu fixed borderless inverted'>
@@ -72,7 +72,9 @@ Later, I came up with a pretty decent alternative to the video stream. Instead o
 
 I eventually managed to muddle through the steps of building an accordian dropdown text similar to what is seen on the Roblox website, and also embedded a couple videos (that would not preload), but I finally met my match when it came time to building the footer. That should be the easiest part of any website! It's just a couple columns of text. Truthfully, it could have been easy if I attempted a static webpage but I decided to try and make the website responsive and adjust the grid boxes as the screen size changed. After all, most people use a mobile device to play Roblox, or at least that's what my daughter uses. 
 
-I looked up all the different ways to mess around with grids on the [Semantic UI](https://semantic-ui.com/collections/grid.html) website and tried for hours to get it working. I failed. One of the major drawbacks was I kept having to open the documentation to see what the "simple language" was supposed to be. For example, to resize something, you can use small, tiny, large, big, huge, whatever...but it's never easy to remember where you can use those and there is nothing to let you know if it's working correctly until you reload the page. I tried to make my padding massive, but apparently padding can only be "very padded." I tried to align my grids but sometimes I was supposed to use the word middle, and other times I needed the word center, or centered. It actually turned out to be a nightmare for me most of the time.    
+I looked up all the different ways to mess around with grids on the [Semantic UI](https://semantic-ui.com/collections/grid.html) website and tried for hours to get it working. I failed. One of the major drawbacks was I kept having to open the documentation to see what the "simple language" was supposed to be. For example, to resize something, you can use small, tiny, large, big, huge, whatever...but it's never easy to remember where you can use those and there is nothing to let you know if it's working correctly until you reload the page. I tried to make my padding massive, but apparently padding can only be "very padded." I tried to align my grids but sometimes I was supposed to use the word middle, and other times I needed the word center, or centered. It actually turned out to be a nightmare for me most of the time.
+
+Between all the time spent figuring out the grid structure and which words to use where, I finally gave up on getting the columns looking just right. Maybe I will try again someday when I have more time.
 
 This is a quote from the Semantic UI website:
 >Concise HTML
@@ -84,6 +86,13 @@ Classes use syntax from natural languages like noun/modifier relationships, word
 <br/>
 >Get the same benefits as BEM or SMACSS, but without the tedium. 
 
-#### What A Joke. 
+#### What. A. Joke... 
 
-Some of the discouragement may have been caused by fatigue, but I have used Twitter Bootstrap in the past, long before I had a clue (not that I am much better now), and I did not have many issues building sites with Bootstrap, or regular HTML/CSS for that matter. Plus, what's with all the DIVs!? Seriously, the HTML5 documentation explicity points out that we should use DIVs as a last resort. 
+Some of the discouragement may have been caused by fatigue, but I have used Twitter Bootstrap in the past, long before I had a clue (not that I am much better now), and I did not have many issues building sites with Bootstrap, or regular HTML/CSS for that matter. Plus, what's with all the DIVs!? Seriously, the HTML5 [documentation](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element) points out that we should use DIVs as a last resort. Maybe I just have a bad memory, or maybe my English is not up to par for Semantic UI, but in the end, I think there must be better solutions out there. 
+
+The concept of using natural language to write code and build websites is great. I think a better approach might be tying documentation to codepen.io or a similar online tool. In a round-a-bout way, that was sort of what I ended up doing anyway. 
+
+Maybe we can build an AI to assist in coming up with solutions rather than searching all over the internet. For example, I want to have two columns that remain fixed width on on the left and one column on the right, but when the screen size shrinks, the two columns on the left should jump to the middle, centered, and the right column should drop below them, also centered on the page. I should be able to search that entire sentence and the search tool can take me directly to codepen.io and provide the code needed to implement. While I am there, I can make some other adjustments and get exactly what I'm after, and then just port the snippet into my code with no issues. Ha, it sounds so lazy. But, isn't that why humans have come so far? We are so lazy that we work very hard to become even lazier.
+
+Better yet, the computer should just read my mind and build the site based on what it thinks I want. We could train a neural network to scan website screen shots and figure out most of the code, and it can help draft the next couple posts for me as well. Do artificial intellectual property rights exist? I suppose some might argue that website designers would be upset, but we use AI to create art all the time and artists are still doing what they do...I think I've gone off topic so I will end this now.
+
