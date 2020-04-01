@@ -8,7 +8,7 @@ labels:
   - Meteor
 ---
 
-#Project PAT
+# Project PAT
 
 _Problem_: Coronavirus (COVID-19) is wreaking havoc across the world and in an effort to mitigate the spread of this deadly virus, Gov. David Ige recently announced statewide restrictions affecting social activities throughout Hawaii. Moreover, following Spring Break 2020, UH Manoa transitioned to online classes __only__, which we today learned will continue for the foreseeable future across all 10 campuses. These changes are likely to cause increased anxiety over concerns for loved ones. Students' may gain weight due to lack of outdoor activities (parks and beaches shut down), or they may feel agitated and become reckless due to lack of in-person social interaction. Others may become depressed from pure boredom or the inability to grasp complex subjects on their own. All of stress added to the already overwhelming responsibility to manage life and grades could compromise our immune systems lead to even more problems.  
 
