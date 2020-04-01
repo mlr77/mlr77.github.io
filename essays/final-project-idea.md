@@ -18,7 +18,7 @@ _Solution_: The PAT application will provide an outlet to help students reduce s
 
 UH students and designated faculty can create an account using UH e-mail addresses. Most user roles are self designated (except site admin). They are noob, aficionado, passerbyer, or something to that effect. Admins can monitor community pages and remove garbage posts. Really this is just a space to spend some quality alone time, together with other hommies, keeping safe, maintaining social distance. Students can talk about games, new tools to create games, setup times to meet up online and collaborate on projects or just play games together (Twister not allowed at this time). However, if you want to build a VR Twister using webcams or something like Kinect, this would be the place to post an idea, meet some new virtual friends and make it happen. If you succeed, share about what went right, wrong, or sell your new idea to an investor and retire, if that's what floats your boat. 
 
-##Mockup page ideas
+## Mockup page ideas
 <ul>
   <li>Landing page</li>
   <li>Create/Manage profile page</li>
@@ -31,7 +31,7 @@ UH students and designated faculty can create an account using UH e-mail address
   <li>FAQ Page</li>
 </ul>
 
-##Use case ideas
+## Use case ideas
 
 <ul>
   <li>Reach the landing page where some recent activity is shared, maybe some recent news/events, game reviews from UH students, nice pictures, and a nav bar near the top to sign-in, etc. Browse, leave, create account, or sign-in</li>
