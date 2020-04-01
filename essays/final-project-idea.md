@@ -41,7 +41,7 @@ UH students and designated faculty can create an account using UH e-mail address
   <li>At least part of the page should be completely random...filling up with things that might pique one's curiosity. Each time the user visits the page, content may be different</li>
 </ul>
 
-##Beyond the basics
+## Beyond the basics
 <ul>
 <li>Ideally, there will be an actual app that can be downloaded, but I'm not sure how it would be distributed if it can be done. Maybe just set it as a free download in the app store and only let UH users access it. It think this is possible.</li>
 <li>It would be great to setup statistics tracking. We could possibly add a favorites option or thumbs up option to posts to track trending data on games or even use the data to automatically trigger new ideas/people networks. For example, if two people do not know each other but they seem to be talking a lot about the same things, maybe the site can "introduce" them to each other through some type of notification system.</li>
