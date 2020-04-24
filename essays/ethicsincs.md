@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: 50 Shades of Grey Hats \n ## A Question of Ethical Coding Practices
+title: 50 Shades of Grey Hats <br />A Question of Ethical Coding Practices
 # All dates must be YYYY-MM-DD format!
 date: 2020-04-23
 labels:
