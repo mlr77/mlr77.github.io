@@ -18,9 +18,11 @@ There are times when a software engineer’s intent is undermined by evildoers, 
 In the article <span style="text-decoration:underline">The code I’m still ashamed of</span> (Sourour, 2016), Bill Sourour talks about being recruited to build a survey site for a marketing firm sponsored by pharmaceutical companies. Initially, Bill trusted everything was on the up and up considering reputation of the clients, but after building the site and realizing he played a part in a scheme to hook teenage girls on certain drugs (that ultimately led to many suicides), he quit the job and expressed remorse. 
 
 The article resonated with me because my son is now working in an unremunerative software engineering job (which is kind of an oxymoron) for a multimillion-dollar company in Japan. Similar to what Bill described, he receives free room and board, and gets the opportunity to work on high level projects without the same burdens levied on senior engineers. Occasionally, he is asked to work on projects that are questionable at best. Nothing in life is free. I believe companies often seek out enthusiastic, yet inexperienced software engineers because it can be a bit of a safety net. A conditional ternary for this situation might look something like this:
-    ```javascript
-    ifCaught ? blame on scapegoat : make money
-    ```
+
+```javascript
+ifCaught ? blame on scapegoat : make money
+```
+
 What could go wrong, right? The recruits see it as an opportunity to hone their skills and build up their resume, while  employers take advantage by having the employee work on small sections of code that senior software engineers do not want to be associated with. Unfortunately, unlike Bill’s moment of clarity, many people turn a blind eye to what is happening and deflect by telling themselves it is the company that is unethical, and they are simply providing a skill set. It is true to some extent, if they leave, someone else will quickly and willingly fill the void. But, does that make it right? 
 
 ### Complacent and Complaisant
