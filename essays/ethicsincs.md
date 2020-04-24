@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: Soup to Nuts
+title: Shameful Coding Practices
 # All dates must be YYYY-MM-DD format!
 date: 2020-04-23
 labels:
