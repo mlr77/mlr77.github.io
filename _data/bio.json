@@ -54,7 +54,7 @@
         "Javascript",
         "Assembly",
         "PHP",
-        "Python",
+        "Python"
       ]
     },
     {
@@ -62,7 +62,7 @@
       "level": "",
       "keywords": [
         "MacOS",
-        "Git/GitHub",
+        "Git/GitHub"
       ]
     }
   ],
@@ -76,5 +76,5 @@
       "courses": [
       ]
     }
-  ],
+  ]
 }

@@ -9,21 +9,7 @@ date: 2020-01-23
 labels:
   - Python
   - Machine Learning
-  - Kaggle
-  - Sklearn
-  - Random Forest Classifiers
-  - Python Notebook
-  - Anaconda
-  - Google Colab
-  - sklearn
-  - matplotlib
-  - pandas
-  - numpy
-  - seaborn
-  - scipy
-  - XGBoost
-  - Catboost
-  - LightGBM
+
 summary: Our four-person team processed travel information for over 1 billion travelers in 2018 and developed a model to predict probability of delay based on origin, destination, and date/time of travel. The goal was to develop a system for frequent fliers to better manage their travel schedules.
 ---
 
