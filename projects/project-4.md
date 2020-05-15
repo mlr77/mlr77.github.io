@@ -15,6 +15,8 @@ labels:
 summary: A Food-based app designed to connect UH Manoa students and local markets through food. 
 ---
 
+<img class="ui medium" src="../images/landing-intro-featured.png">
+
 # Dorm Room Cooks
 - [View Documentation](https://dorm-room-cook.github.io/)
 
