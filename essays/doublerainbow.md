@@ -1,12 +1,13 @@
 ---
 layout: essay
 type: essay
-title: S
+title: Double Rainbow
 # All dates must be YYYY-MM-DD format!
 date: 2020-05-14
 labels:
   - Software Engineering
   - Learning
+summary: Adventures in discovering Software Engineering.
 ---
 
 in progress...
