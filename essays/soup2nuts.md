@@ -2,6 +2,7 @@
 layout: essay
 type: essay
 title: Soup to Nuts
+permalink: essays/aboutme
 # All dates must be YYYY-MM-DD format!
 date: 2020-01-23
 labels:

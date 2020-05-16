@@ -19,7 +19,7 @@ summary: A Tetris clone developed for ICS 111, Intro to Java.
 
 # Intro to Java - Final Project
 
-I wrote the Tetris Clone in Java using @Dlyan Kobayashi's EZ Graphics library. This was part of a team project and we decided build Tetris because it applied most of the concept learned in the Introduction to Java course, including one, two, and three-dimensional arrays, ArrayLists, and a number of other elementary concepts. We experimented with public and private settings and used examples from the course to help remove EZ elements, so the Tetris pieces could move freely without hogging too many resources.  
+I wrote the Tetris Clone in Java using @Dlyan Kobayashi's EZ Graphics library. This was part of a team project, and we decided build Tetris because it applied most of the concept learned in the Introduction to Java course, including one, two, and three-dimensional arrays, ArrayLists, and a number of other elementary concepts. We experimented with public and private settings and used examples from the course to help remove EZ elements, so the Tetris pieces could move freely without hogging too many resources.  
 
 We designed the gameplay to be similar to the original game, with the following keyboard inputs: Enter to play, ESC to pause, left/right arrow to move, Q and E to rotate and SPACEBAR to drop the piece down faster. Also, we implemented a "Hold" function using boolean to hold a piece for future use by pressing the Shift Key. Lastly, there is a preview window which displays 5 "next" pieces, a simple clock to let you know how long the game has been played, as well as a scoreboard which resets if the game is lost. 
 

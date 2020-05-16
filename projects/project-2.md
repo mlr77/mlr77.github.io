@@ -19,7 +19,7 @@ Our four-person team processed travel information for over 1 billion travelers i
 
 ## Tools Used
 
-This project focused on applying Math skills we learned from our Probability and Statistics course and we had an option of using R, Python, or Excel to analyze the data. We chose Python since a few of our team members already had experience with the language. Also, through Google Drive and Colab (a Python Notebook collaborative tool), we were able to easily communite ideas and code. Python also allowed us to process over 6 million flight records whereas Excel would not be able to handle such a task. 
+This project focused on applying Math skills we learned from our Probability and Statistics course, and we had an option of using R, Python, or Excel to analyze the data. We chose Python since a few of our team members were already experienced with the language. Also, through Google Drive and Colab (a Python Notebook collaborative tool), we were able to easily communicate ideas and code. Python also allowed us to process over 6 million flight records whereas Excel would not be able to handle such a task. 
 
 ### Dataset repositories:
 - https://opendata.socrata.com/
@@ -35,7 +35,7 @@ This project focused on applying Math skills we learned from our Probability and
 
 <img class="ui image" src="../images/proj2_model_img.png">
 
-Most of flight delays can be attributed to three main factors. The leading factor is waiting on an
+Most flight delays can be attributed to three main factors. The leading factor is waiting on an
 aircraft that simply arrives late. The next is air carrier delay, which can be maintenance, cleaning,
 baggage loading or fueling related. The third leading factor is a National Aviation System Delay,
 which can be due to many reasons, such as : non-extreme weather, heavy traffic volume, or air
@@ -61,7 +61,7 @@ predict_delay('01/23/2020 13:40:00',
                 87.5% chance of delay.)
 ```
 
-I gained valuable experience finding and pre-processing large datasets, building charts and graphs for exploratory data analysis (EDA), and choosing the best prediction model for the job. I used one Python notebook for EDA, and then used a separate notebook to test different models. Ultimately, I picked a random forest classifier and acheived decent results. The whole project took about two weeks to put together after planning and discussing options for a month. 
+I gained valuable experience finding and pre-processing large datasets, building charts and graphs for exploratory data analysis (EDA), and choosing the best prediction model for the job. I used one Python notebook for EDA, and then used a separate notebook to test different models. Ultimately, I picked a random forest classifier and achieved decent results. The whole project took about two weeks to put together after planning and discussing options for a month. 
 
 Below are a few snapshots from the EDA stage: 
 
