@@ -49,12 +49,15 @@
       "name": "Languages and Frameworks",
       "level": "",
       "keywords": [
-        "C",
+        "C/C++",
         "Java",
         "Javascript",
         "Assembly",
         "PHP",
-        "Python"
+        "Python",
+        "MATLAB",
+        "Semantic UI",
+        "Bootstrap"
       ]
     },
     {
@@ -69,7 +72,7 @@
   "education": [
     {
       "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2022)",
+      "area": "Computer Science (expected Fall, 2022)",
       "studyType": "B.S.",
       "startDate": "2019-01-01",
       "endDate": "Present",
