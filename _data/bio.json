@@ -49,12 +49,12 @@
       "name": "Languages and Frameworks",
       "level": "",
       "keywords": [
-        "Assembly", "C/C++", "CSS"
+        "Assembly", "C/C++", "CSS",
         "HTML",
         "Java", "Javascript",
         "MATLAB",
         "PHP", "Python", "R"
-        "Semantic UI", "SQL"
+        "Semantic UI", "SQL",
       ]
     },
     {
