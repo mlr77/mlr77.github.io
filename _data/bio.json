@@ -80,20 +80,7 @@
       "startDate": "2019-01-01",
       "endDate": "Present",
       "courses": [
-        "Java", 
-        "C/C++", 
-        "Assembly", 
-        "Database", 
-        "Machine Learning I & II",
-        "Software Engineering I",
-        "Data Science Fundamentals",
-        "Discrete Math I & II",
-        "Calculus I & II",
-        "Linear Algebra",
-        "Inferential Statistics",
-        "Augmented and Virtual Reality",
-        "Probability and Statistics",
-        "Bioinformatics"
+        "Java, C/C++, Assembly, Database, Machine Learning I & II, Software Engineering I, Data Science Fundamentals, Discrete Math I & II, Calculus I & II, Linear Algebra, Inferential Statistics, Augmented and Virtual Reality, Bioinformatics, Probability and Statistics"
       ]
     }
   ]
