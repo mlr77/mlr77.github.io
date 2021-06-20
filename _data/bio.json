@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Michael Rogers",
-    "label": "Student",
+    "label": "Graduate Student",
     "picture": "https://mlr77.github.io/images/mikepic.png",
     "email": "mlr2010@hawaii.edu",
     "phone": "808-277-1793",
     "website": "https://mlr77.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Fall, 2022.",
+    "summary": "I am working toward an M.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Fall, 2023.",
     "location": {
       "address": "",
       "postalCode": "96789",
@@ -29,17 +29,17 @@
   },
   "interests": [
     {
-      "name": "software engineering",
+      "name": "Software Engineering",
       "keywords": [
       ]
     },
     {
-      "name": "machine learning",
+      "name": "Machine Learning",
       "keywords": [
       ]
     },
     {
-      "name": "artificial intelligence",
+      "name": "Artificial Intelligence",
       "keywords": [
       ]
     }
@@ -72,8 +72,8 @@
   "education": [
     {
       "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Fall, 2022)",
-      "studyType": "B.S.",
+      "area": "Computer Science (expected Fall, 2023)",
+      "studyType": "M.S.",
       "startDate": "2019-01-01",
       "endDate": "Present",
       "courses": [
