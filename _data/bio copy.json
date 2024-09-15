@@ -57,10 +57,7 @@
       "position": "Research Assistant, Scalable Analytics and Informatics Laboratory",
       "startDate": "2022-08-01",
       "endDate": "2024-01-01",
-      "highlights": [
-        "Co-inventor of a web-based data science tool used by 5,000+ clients across 800 institutions.",
-        "Engineered back-end AI/ML architecture for a large-scale spatial workspace, improving data science capabilities by 30%. Pioneered winning network security hackathon project by integrating NLP and VR technologies."
-      ]
+      "summary": "Co-inventor of a web-based data science tool used by 5,000+ clients across 800 institutions. Engineered back-end AI/ML architecture for a large-scale spatial workspace, improving data science capabilities by 30%. Pioneered winning network security hackathon project by integrating NLP and VR technologies."
     },
     {
       "name": "The Garrett Group",
@@ -68,10 +65,7 @@
       "position": "ISR Mission Manager",
       "startDate": "2017-07-01",
       "endDate": "2018-07-01",
-      "highlights": [
-        "Developed strategic plans and advised senior leaders on resource allocation for $1B+ in ISR assets.",
-        "Authored and routed over 100 military orders to optimize global ISR resource distribution."
-      ]
+      "summary": "Developed strategic plans and advised senior leaders on resource allocation for $1B+ in ISR assets. Authored and routed over 100 military orders to optimize global ISR resource distribution."
     },
     {
       "name": "United States Air Force",
@@ -79,10 +73,7 @@
       "position": "Language Analyst",
       "startDate": "1997-04-01",
       "endDate": "2017-04-01",
-      "highlights": [
-        "Led teams of up to 80 analysts, transforming multi-source intelligence into actionable insights.",
-        "Revitalized stalled NLP project by labeling datasets from raw audio, reducing project timeline from years to months."
-      ]
+      "summary": "Led teams of up to 80 analysts, transforming multi-source intelligence into actionable insights. Revitalized stalled NLP project by labeling datasets from raw audio, reducing project timeline from years to months."
     }
   ],
   "education": [
@@ -94,7 +85,11 @@
       "endDate": "2023-12-15",
       "summary": "Thesis: Developed collaborative software integrating Python AI/ML workflows with a JavaScript frontend.",
       "courses": [
-        "Machine Learning, Data Science, Statistical Inference, Deep Learning, Data Visualization"
+        "Machine Learning",
+        "Data Science",
+        "Statistical Inference",
+        "Deep Learning",
+        "Data Visualization"
       ]
     }
   ]
