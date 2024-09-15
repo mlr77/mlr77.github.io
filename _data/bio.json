@@ -5,8 +5,6 @@
     "name": "Michael Rogers",
     "label": "Data Analyst / Tech Professional",
     "picture": "https://mlr77.github.io/images/mikepic.png",
-    "website": "https://mlr77.github.io",
-    "email": "michael.l.rogers@me.com",
     "phone": "(503) 926-9494",
     "summary": "Data science professional with expertise in AI/ML, NLP, and backend system development. Proven ability to build scalable solutions and deliver innovative data-driven projects.",
     "location": {
@@ -19,12 +17,12 @@
     "profiles": [
       {
         "network": "github",
-        "username": "mlr77",
+        "username": "",
         "url": "http://github.com/mlr77"
       },
       {
         "network": "linkedin",
-        "username": "michael rogers",
+        "username": "",
         "url": "https://www.linkedin.com/in/michael-rogers-a2a1152a/"
       }
     ]
