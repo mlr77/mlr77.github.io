@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json?theme=macchiato",
   "basics": {
     "name": "Michael Rogers",
     "label": "Data Analyst / Tech Professional",
@@ -451,32 +451,6 @@
         "SQL",
         "Visualization Tools"
       ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Meritorious Service Medal",
-      "date": "2017-01-01"
-    },
-    {
-      "title": "Joint Service Commendation Medal",
-      "date": "2009-01-01"
-    },
-    {
-      "title": "Joint Service Commendation Medal",
-      "date": "2007-01-01"
-    },
-    {
-      "title": "Joint Service Commendation Medal",
-      "date": "2003-01-01"
-    },
-    {
-      "title": "Joint Service Achievement Medal",
-      "date": "2005-01-01"
-    },
-    {
-      "title": "Joint Service Achievement Medal",
-      "date": "2001-01-01"
     }
   ]
 }
