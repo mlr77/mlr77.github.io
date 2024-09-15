@@ -2,6 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Michael Rogers",
+    "picture": "https://mlr77.github.io/images/mikepic.png",
     "label": "Data Science & AI Professional",
     "email": "michael.l.rogers@me.com",
     "phone": "(503) 926-9494",
