@@ -52,7 +52,7 @@
   ],
   "work": [
     {
-      "name": "University of Hawai`i at Mānoa",
+      "company": "University of Hawai`i at Mānoa",
       "location": "Honolulu, HI",
       "position": "Research Assistant, Scalable Analytics and Informatics Laboratory",
       "startDate": "2022-08-01",
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "name": "The Garrett Group",
+      "company": "The Garrett Group",
       "location": "Camp H.M. Smith, HI",
       "position": "ISR Mission Manager",
       "startDate": "2017-07-01",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "name": "United States Air Force",
+      "company": "United States Air Force",
       "location": "Various Locations",
       "position": "Language Analyst",
       "startDate": "1997-04-01",
