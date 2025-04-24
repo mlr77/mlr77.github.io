@@ -15,7 +15,7 @@ labels:
 summary: Built a frontend clone of the Roblox landing page as a solo project to strengthen React and Semantic UI skills. What started as simple implementation evolved into a deep dive into framework limitations, requiring creative workarounds for styling customization and responsive design challenges.
 ---
 
-<img class="ui rounded image" src="../images/roblox_comparison.png">*Side-by-side comparison of the original Roblox landing page and my clone implementation.*
+<img class="ui rounded image" src="../images/projects/roblox-clone.png">*Side-by-side comparison of the original Roblox landing page and my clone implementation.*
 
 ## Project Overview
 
