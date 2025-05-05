@@ -1,0 +1,102 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Michael Rogers",
+    "picture": "https://mlr77.github.io/images/mikepic.png",
+    "label": "Data Science & AI Professional",
+    "email": "michael.l.rogers@me.com",
+    "phone": "(503) 926-9494",
+    "location": {
+      "city": "Mililani",
+      "region": "HI",
+      "countryCode": "US"
+    },
+    "summary": "Retired Air Force veteran with 20+ years of intelligence and data analysis experience, and a master’s degree in computer science focused on AI/ML and collaborative software development. Proven leader in orchestrating cross-functional teams and developing scalable back-end architectures. Skilled in applying machine learning to enhance decision-making and innovation. Seeking a tech role to leverage expertise in AI/ML, research, and development."
+  },
+  "skills": [
+    {
+      "name": "Programming",
+      "level": "Advanced",
+      "keywords": [
+        "Python",
+        "SQL",
+        "JavaScript",
+        "Dart",
+        "HTML/CSS",
+        "React",
+        "Docker",
+        "Git",
+        "Redis",
+        "FastAPI",
+        "Yjs"
+      ]
+    },
+    {
+      "name": "Data Science",
+      "level": "Advanced",
+      "keywords": [
+        "Machine Learning",
+        "Statistical Inference",
+        "Data Visualization"
+      ]
+    },
+    {
+      "name": "Languages",
+      "level": "Proficient",
+      "keywords": ["Mandarin Chinese"]
+    },
+    {
+      "name": "Software & Tools",
+      "level": "Advanced",
+      "keywords": ["Microsoft Office", "Windows", "macOS"]
+    }
+  ],
+  "work": [
+    {
+      "company": "University of Hawai`i at Mānoa",
+      "location": "Honolulu, HI",
+      "position": "Research Assistant, Scalable Analytics and Informatics Laboratory",
+      "startDate": "2022-08-01",
+      "endDate": "2024-01-01",
+      "highlights": [
+        "Co-inventor of a web-based data science tool used by 5,000+ clients across 800 institutions.",
+        "Engineered back-end AI/ML architecture for a large-scale spatial workspace, improving data science capabilities by 30%. Pioneered winning network security hackathon project by integrating NLP and VR technologies."
+      ]
+    },
+    {
+      "company": "The Garrett Group",
+      "location": "Camp H.M. Smith, HI",
+      "position": "ISR Mission Manager",
+      "startDate": "2017-07-01",
+      "endDate": "2018-07-01",
+      "highlights": [
+        "Developed strategic plans and advised senior leaders on resource allocation for $1B+ in ISR assets.",
+        "Authored and routed over 100 military orders to optimize global ISR resource distribution."
+      ]
+    },
+    {
+      "company": "United States Air Force",
+      "location": "Various Locations",
+      "position": "Language Analyst",
+      "startDate": "1997-04-01",
+      "endDate": "2017-04-01",
+      "highlights": [
+        "Led teams of up to 80 analysts, transforming multi-source intelligence into actionable insights.",
+        "Revitalized stalled NLP project by labeling datasets from raw audio, reducing project timeline from years to months."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Hawai`i at Mānoa",
+      "area": "Computer Science",
+      "studyType": "Master of Science",
+      "startDate": "2019-01-01",
+      "endDate": "2023-12-15",
+      "summary": "Thesis: Developed collaborative software integrating Python AI/ML workflows with a JavaScript frontend.",
+      "courses": [
+        "Courses: Machine Learning, Data Science, Statistical Inference, Deep Learning, Data Visualization"
+      ]
+    }
+  ]
+}
