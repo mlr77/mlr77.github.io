@@ -1,0 +1,138 @@
+name: Deploy Portfolio + Prism Docs
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'portfolio/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # -------------------------------
+      # Checkout repos
+      # -------------------------------
+      - name: Checkout Portfolio Repo
+        uses: actions/checkout@v4
+        with:
+          path: portfolio
+
+      - name: Checkout Prism Repo
+        uses: actions/checkout@v4
+        with:
+          repository: mlr77/prism
+          ref: main
+          path: prism
+          token: ${{ secrets.PRISM_REPO_TOKEN }}
+
+      # -------------------------------
+      # Setup Node + pnpm
+      # -------------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@10.14.0 --activate
+
+      # -------------------------------
+      # Build Portfolio → mlr.dev/
+      # -------------------------------
+      - name: Build Portfolio
+        run: |
+          cd portfolio
+          if [ -f package.json ]; then
+            pnpm install
+            pnpm run build
+            mkdir -p ../site-dist
+            cp -r dist/* ../site-dist/
+          else
+            echo '<!doctype html><title>Portfolio Missing</title>' > ../site-dist/index.html
+          fi
+
+      # -------------------------------
+      # Add SPA Fallback for Portfolio
+      # -------------------------------
+      - name: Add SPA Fallback
+        run: |
+          if [ -f site-dist/index.html ]; then
+            cp site-dist/index.html site-dist/404.html
+          fi
+
+      # -------------------------------
+      # Copy OpenAPI JSON for Docs
+      # -------------------------------
+      - name: Copy OpenAPI for Docs
+        run: |
+          mkdir -p prism/prism-docs/public
+          if [ -f prism/backend/docs/openapi.json ]; then
+            cp prism/backend/docs/openapi.json prism/prism-docs/public/openapi.json
+          else
+            echo '{}' > prism/prism-docs/public/openapi.json
+          fi
+
+      # -------------------------------
+      # Build Prism Docs → mlr.dev/prism/docs
+      # -------------------------------
+      - name: Build Prism Docs
+        run: |
+          cd prism/prism-docs
+          if [ -f package.json ]; then
+            pnpm install
+            ZUDOKU_PUBLIC_API_URL=/prism/docs/openapi.json pnpm run build
+            mkdir -p ../../site-dist/prism/docs
+            cp -r dist/* ../../site-dist/prism/docs/
+          else
+            echo '<!doctype html><title>No Docs</title>' > ../../site-dist/prism/docs/index.html
+          fi
+
+          # Prism landing page
+          mkdir -p ../../site-dist/prism
+          cat > ../../site-dist/prism/index.html <<'HTML'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Prism</title>
+          <h1>Welcome to Prism</h1>
+          <p><a href="./docs/">View Documentation</a></p>
+          HTML
+
+      # -------------------------------
+      # Add CNAME for custom domain
+      # -------------------------------
+      - name: Add CNAME
+        run: |
+          if [ -n "${{ vars.PAGES_CNAME }}" ]; then
+            echo "${{ vars.PAGES_CNAME }}" > site-dist/CNAME
+          fi
+
+      # -------------------------------
+      # Upload artifact
+      # -------------------------------
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site-dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
