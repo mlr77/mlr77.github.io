@@ -40,13 +40,24 @@ jobs:
         with:
           path: portfolio
 
-      - name: Checkout Prism Repo
-        uses: actions/checkout@v4
-        with:
-          repository: mlr77/prism
-          ref: main
-          path: prism
-          token: ${{ secrets.PRISM_REPO_TOKEN }}
+      # Fetch Prism source as a tarball to avoid git auth issues
+      - name: Fetch Prism source (tarball)
+        run: |
+          set -euo pipefail
+          REF=main
+          API_URL="https://api.github.com/repos/mlr77/prism/tarball/${REF}"
+          echo "Downloading Prism source from: ${API_URL}"
+          if [ -n "${{ secrets.PRISM_REPO_TOKEN }}" ]; then
+            echo "Using PAT from secret PRISM_REPO_TOKEN"
+            curl -fsSL -H "Authorization: token ${{ secrets.PRISM_REPO_TOKEN }}" -H "Accept: application/vnd.github+json" -o prism.tar.gz "${API_URL}"
+          else
+            echo "No token provided; attempting anonymous download"
+            curl -fsSL -H "Accept: application/vnd.github+json" -o prism.tar.gz "${API_URL}"
+          fi
+          mkdir -p prism_src
+          tar -xzf prism.tar.gz -C prism_src --strip-components=1
+          mv prism_src prism
+          rm -f prism.tar.gz
 
       # -------------------------------
       # Setup Ruby (Jekyll) and Node (for Prism Docs)
