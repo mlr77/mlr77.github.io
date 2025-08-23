@@ -49,40 +49,30 @@ jobs:
           token: ${{ secrets.PRISM_REPO_TOKEN }}
 
       # -------------------------------
-      # Setup Ruby + Node + pnpm
+      # Setup Ruby (for portfolio)
       # -------------------------------
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-          cache-dependency-path: prism/prism-docs/pnpm-lock.yaml
+      - name: Install Jekyll
+        run: gem install jekyll:4.3.2
 
-      - name: Setup pnpm
+      - name: Build Portfolio (Jekyll)
+        run: jekyll build -s portfolio -d site-dist
+
+      - name: Add SPA Fallback for Portfolio
+        run: cp site-dist/index.html site-dist/404.html || true
+
+      # -------------------------------
+      # Setup Node + pnpm (for prism-docs)
+      # -------------------------------
+      - name: Setup Node & pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
           run_install: false
-
-      # -------------------------------
-      # Build Portfolio → mlr.dev/
-      # -------------------------------
-      - name: Install Jekyll
-        run: gem install jekyll:4.3.2
-
-      - name: Build Portfolio
-        run: jekyll build -s portfolio -d site-dist
-
-      - name: Add Portfolio SPA Fallback
-        run: |
-          if [ -f site-dist/index.html ]; then
-            cp site-dist/index.html site-dist/404.html
-          fi
 
       # -------------------------------
       # Build Prism Docs → mlr.dev/prism/docs
