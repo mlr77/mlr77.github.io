@@ -1,12 +1,23 @@
 name: Deploy Portfolio + Prism Docs
 
 on:
+  # Run on pushes to either default branch
   push:
-    branches: [ main ]
-    paths:
-      - 'portfolio/**'
-      - '.github/workflows/deploy.yml'
+    branches: [ master, main ]
+    # Build whenever workflow changes or any site files change
+    # (remove the old portfolio-only path filter so normal site edits deploy)
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - '*.md'
+  # Allow manual triggers
   workflow_dispatch:
+  # Allow cross-repo triggers from the Prism repo
+  repository_dispatch:
+    types: [ prism-updated ]
+  # Optional: periodic rebuild to pick up remote changes if needed
+  schedule:
+    - cron: '0 */12 * * *'
 
 permissions:
   contents: read
@@ -38,8 +49,13 @@ jobs:
           token: ${{ secrets.PRISM_REPO_TOKEN }}
 
       # -------------------------------
-      # Setup Node + pnpm
+      # Setup Ruby (Jekyll) and Node (for Prism Docs)
       # -------------------------------
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -50,19 +66,21 @@ jobs:
         run: corepack enable && corepack prepare pnpm@10.14.0 --activate
 
       # -------------------------------
-      # Build Portfolio → mlr.dev/
+      # Build Portfolio (Jekyll) → mlr.dev/
       # -------------------------------
-      - name: Build Portfolio
+      - name: Install Jekyll
         run: |
-          cd portfolio
-          if [ -f package.json ]; then
-            pnpm install
-            pnpm run build
-            mkdir -p ../site-dist
-            cp -r dist/* ../site-dist/
-          else
-            echo '<!doctype html><title>Portfolio Missing</title>' > ../site-dist/index.html
-          fi
+          gem install jekyll:4.3.2
+
+      - name: Build Portfolio (Jekyll)
+        run: |
+          jekyll build -s portfolio -d site-dist
+
+      # Quick debug of portfolio artifact contents (non-fatal)
+      - name: Debug portfolio artifact root
+        run: |
+          echo 'Listing site-dist (root):'
+          ls -la site-dist | head || true
 
       # -------------------------------
       # Add SPA Fallback for Portfolio
@@ -94,7 +112,11 @@ jobs:
           cd prism/prism-docs
           if [ -f package.json ]; then
             pnpm install
-            ZUDOKU_PUBLIC_API_URL=/prism/docs/openapi.json pnpm run build
+            # Common envs some build tools read; unknown ones are harmless
+            BASE_URL=/prism/docs \
+            PUBLIC_BASE_PATH=/prism/docs \
+            ZUDOKU_PUBLIC_API_URL=/prism/docs/openapi.json \
+            pnpm run build
             mkdir -p ../../site-dist/prism/docs
             cp -r dist/* ../../site-dist/prism/docs/
           else
@@ -113,6 +135,23 @@ jobs:
           <p><a href="./docs/">View Documentation</a></p>
           HTML
 
+      # Add SPA fallback inside docs so deep links resolve on Pages
+      - name: Add Docs 404 fallback
+        run: |
+          if [ -f site-dist/prism/docs/index.html ]; then
+            cp site-dist/prism/docs/index.html site-dist/prism/docs/404.html
+          fi
+
+      # Debug listings to verify docs exist in artifact
+      - name: Debug docs output
+        run: |
+          echo 'Listing built docs dist:'
+          ls -la prism/prism-docs/dist | head || true
+          echo 'Listing artifact docs path:'
+          ls -la site-dist/prism/docs | head || true
+          # Quick check for base path reference (non-fatal)
+          grep -n "prism/docs" -R prism/prism-docs/dist 2>/dev/null | head || true
+
       # -------------------------------
       # Add CNAME for custom domain
       # -------------------------------
@@ -121,6 +160,11 @@ jobs:
           if [ -n "${{ vars.PAGES_CNAME }}" ]; then
             echo "${{ vars.PAGES_CNAME }}" > site-dist/CNAME
           fi
+
+      # Disable Jekyll processing to avoid underscore/asset issues
+      - name: Disable Jekyll
+        run: |
+          touch site-dist/.nojekyll
 
       # -------------------------------
       # Upload artifact
