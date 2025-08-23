@@ -90,12 +90,12 @@ jobs:
         run: |
           mkdir -p prism/prism-docs/public/prism/docs
           if [ ! -f prism/prism-docs/public/prism/docs/404.html ]; then
-            cat > prism/prism-docs/public/prism/docs/404.html <<'HTML'
-            <!doctype html>
-            <meta charset="utf-8">
-            <title>Prism Docs</title>
-            <meta http-equiv="refresh" content="0; url=./">
-            HTML
+            printf '%s\n' \
+              '<!doctype html>' \
+              '<meta charset="utf-8">' \
+              '<title>Prism Docs</title>' \
+              '<meta http-equiv="refresh" content="0; url=./">' \
+              > prism/prism-docs/public/prism/docs/404.html
           fi
 
       # -------------------------------
