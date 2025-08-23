@@ -79,8 +79,9 @@ jobs:
       - name: Copy OpenAPI for Docs
         run: |
           mkdir -p prism/prism-docs/public
-          if [ -f prism/backend/docs/openapi.json ]; then
-            cp prism/backend/docs/openapi.json prism/prism-docs/public/openapi.json
+          if [ -f prism/prism-docs/public/openapi.json ]; then rm prism/prism-docs/public/openapi.json; fi
+          if [ -f prism/prism/apis/openapi.json ]; then
+            cp prism/prism/apis/openapi.json prism/prism-docs/public/openapi.json
           else
             echo '{}' > prism/prism-docs/public/openapi.json
           fi
@@ -97,7 +98,9 @@ jobs:
             mkdir -p ../../site-dist/prism/docs
             cp -r dist/* ../../site-dist/prism/docs/
           else
+            mkdir -p ../../site-dist/prism/docs
             echo '<!doctype html><title>No Docs</title>' > ../../site-dist/prism/docs/index.html
+            cp ../../site-dist/prism/docs/index.html ../../site-dist/prism/docs/404.html
           fi
 
           # Prism landing page
