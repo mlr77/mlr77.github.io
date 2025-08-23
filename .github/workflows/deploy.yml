@@ -68,6 +68,14 @@ jobs:
         with:
           version: 10.14.0
 
+      # Quick sanity check of toolchain versions
+      - name: Verify toolchain
+        run: |
+          echo "node: $(node -v)"
+          echo "pnpm: $(pnpm -v)" || true
+          echo "ruby: $(ruby -v)"
+          jekyll -v || true
+
       # -------------------------------
       # Build Portfolio (Jekyll) → mlr.dev/
       # -------------------------------
@@ -111,6 +119,10 @@ jobs:
       # Build Prism Docs → mlr.dev/prism/docs
       # -------------------------------
       - name: Build Prism Docs
+        env:
+          BASE_URL: /prism/docs
+          PUBLIC_BASE_PATH: /prism/docs
+          ZUDOKU_PUBLIC_API_URL: /prism/docs/openapi.json
         run: |
           cd prism/prism-docs
           if [ -f package.json ]; then
@@ -119,10 +131,6 @@ jobs:
               corepack enable && corepack prepare pnpm@10.14.0 --activate;
             fi
             pnpm install
-            # Common envs some build tools read; unknown ones are harmless
-            BASE_URL=/prism/docs \
-            PUBLIC_BASE_PATH=/prism/docs \
-            ZUDOKU_PUBLIC_API_URL=/prism/docs/openapi.json \
             pnpm run build
             mkdir -p ../../site-dist/prism/docs
             cp -r dist/* ../../site-dist/prism/docs/
