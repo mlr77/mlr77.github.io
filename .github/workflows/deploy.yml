@@ -67,12 +67,15 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
+          run_install: false
 
       # Quick sanity check of toolchain versions
       - name: Verify toolchain
         run: |
           echo "node: $(node -v)"
-          echo "pnpm: $(pnpm -v)" || true
+          corepack enable || true
+          corepack prepare pnpm@10.14.0 --activate || true
+          echo "pnpm: $(corepack pnpm -v)" || true
           echo "ruby: $(ruby -v)"
           jekyll -v || true
 
@@ -126,12 +129,10 @@ jobs:
         run: |
           cd prism/prism-docs
           if [ -f package.json ]; then
-            if ! command -v pnpm >/dev/null 2>&1; then
-              echo "pnpm not found, installing locally via corepack as fallback";
-              corepack enable && corepack prepare pnpm@10.14.0 --activate;
-            fi
-            pnpm install
-            pnpm run build
+            corepack enable
+            corepack prepare pnpm@10.14.0 --activate
+            corepack pnpm install
+            corepack pnpm run build
             mkdir -p ../../site-dist/prism/docs
             cp -r dist/* ../../site-dist/prism/docs/
           else
