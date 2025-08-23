@@ -78,11 +78,13 @@ jobs:
       # Ensure OpenAPI spec is placed where the docs expect
       - name: Copy OpenAPI for Docs
         run: |
-          mkdir -p prism/prism-docs/public
+          mkdir -p prism/prism-docs/public prism/prism-docs/apis
           if [ -f prism/prism/apis/openapi.json ]; then
             cp prism/prism/apis/openapi.json prism/prism-docs/public/openapi.json
+            cp prism/prism/apis/openapi.json prism/prism-docs/apis/openapi.json
           else
             echo '{}' > prism/prism-docs/public/openapi.json
+            echo '{}' > prism/prism-docs/apis/openapi.json
           fi
 
       # Seed a fallback file under the basePath so Zudoku's build doesn't error when relocating 404.html
@@ -96,6 +98,30 @@ jobs:
               '<title>Prism Docs</title>' \
               '<meta http-equiv="refresh" content="0; url=./">' \
               > prism/prism-docs/public/prism/docs/404.html
+          fi
+
+      # Also seed a 404 route page so the prerender generates dist/prism/docs/404.html
+      - name: Seed Docs 404 Route Page (MDX)
+        run: |
+          mkdir -p prism/prism-docs/pages
+          if [ ! -f prism/prism-docs/pages/404.mdx ]; then
+            printf '%s\n' \
+              '---' \
+              'title: Not Found' \
+              '---' \
+              '' \
+              '# Not Found' \
+              '' \
+              'This page was not found. Returning to the docs home...' \
+              '' \
+              '<script>' \
+              "if (typeof window !== 'undefined') {" \
+              "  const base = '/prism/docs/';" \
+              "  const to = new URL('.', window.location.origin + base).pathname;" \
+              "  window.location.replace(to);" \
+              '}' \
+              '</script>' \
+              > prism/prism-docs/pages/404.mdx
           fi
 
       # -------------------------------
