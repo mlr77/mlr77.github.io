@@ -46,6 +46,7 @@ jobs:
           sparse-checkout: |
             prism-docs
             prism/apis/openapi.json
+            backend/docs/openapi.json
           sparse-checkout-cone-mode: false
           token: ${{ secrets.PRISM_REPO_TOKEN }}
 
@@ -78,14 +79,38 @@ jobs:
       # Ensure OpenAPI spec is placed where the docs expect
       - name: Copy OpenAPI for Docs
         run: |
+          set -e
           mkdir -p prism/prism-docs/public prism/prism-docs/apis
-          if [ -f prism/prism/apis/openapi.json ]; then
-            cp prism/prism/apis/openapi.json prism/prism-docs/public/openapi.json
-            cp prism/prism/apis/openapi.json prism/prism-docs/apis/openapi.json
-          else
-            echo '{}' > prism/prism-docs/public/openapi.json
-            echo '{}' > prism/prism-docs/apis/openapi.json
+          SRC=""
+          # 1) Prefer a committed docs spec if present
+          if [ -s prism/prism-docs/apis/openapi.json ]; then
+            SRC="prism/prism-docs/apis/openapi.json"
+          # 2) Next, the canonical repo path
+          elif [ -f prism/prism/apis/openapi.json ]; then
+            SRC="prism/prism/apis/openapi.json"
+          # 3) Legacy backend location
+          elif [ -f prism/backend/docs/openapi.json ]; then
+            SRC="prism/backend/docs/openapi.json"
           fi
+
+          if [ -n "$SRC" ]; then
+            echo "Using OpenAPI from $SRC"
+            cp "$SRC" prism/prism-docs/apis/openapi.json
+            cp "$SRC" prism/prism-docs/public/openapi.json
+          else
+            echo "No OpenAPI found. Creating a minimal valid stub."
+            cat > prism/prism-docs/apis/openapi.json <<'JSON'
+            {
+              "openapi": "3.1.0",
+              "info": { "title": "PRISM API", "version": "0.0.0" },
+              "paths": {}
+            }
+            JSON
+            cp prism/prism-docs/apis/openapi.json prism/prism-docs/public/openapi.json
+          fi
+
+          echo "OpenAPI header (apis/openapi.json):"
+          grep -E '"openapi"|"swagger"|"info"' -n prism/prism-docs/apis/openapi.json | head -n 5 || true
 
       # Seed a fallback file under the basePath so Zudoku's build doesn't error when relocating 404.html
       - name: Seed Docs 404 for Zudoku
