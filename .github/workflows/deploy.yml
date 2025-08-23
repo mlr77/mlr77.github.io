@@ -1,21 +1,15 @@
 name: Deploy Portfolio + Prism Docs
 
 on:
-  # Run on pushes to either default branch
   push:
     branches: [ master, main ]
-    # Build whenever workflow changes or any site files change
-    # (remove the old portfolio-only path filter so normal site edits deploy)
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
       - '*.md'
-  # Allow manual triggers
   workflow_dispatch:
-  # Allow cross-repo triggers from the Prism repo
   repository_dispatch:
     types: [ prism-updated ]
-  # Optional: periodic rebuild to pick up remote changes if needed
   schedule:
     - cron: '0 */12 * * *'
 
@@ -33,23 +27,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # -------------------------------
-      # Checkout repos
+      # Checkout portfolio
       # -------------------------------
       - name: Checkout Portfolio Repo
         uses: actions/checkout@v4
         with:
           path: portfolio
 
-      - name: Checkout Prism Repo
+      # -------------------------------
+      # Checkout only prism-docs folder
+      # -------------------------------
+      - name: Checkout Prism Docs subdir only
         uses: actions/checkout@v4
         with:
           repository: mlr77/prism
           ref: main
           path: prism
+          sparse-checkout: |
+            prism-docs
+          sparse-checkout-cone-mode: false
           token: ${{ secrets.PRISM_REPO_TOKEN }}
 
       # -------------------------------
-      # Setup Ruby (Jekyll) and Node (for Prism Docs)
+      # Setup Ruby + Node + pnpm
       # -------------------------------
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -69,53 +69,19 @@ jobs:
           version: 10.14.0
           run_install: false
 
-      # Quick sanity check of toolchain versions
-      - name: Verify toolchain
-        run: |
-          echo "node: $(node -v)"
-          corepack enable || true
-          corepack prepare pnpm@10.14.0 --activate || true
-          echo "pnpm: $(corepack pnpm -v)" || true
-          echo "ruby: $(ruby -v)"
-          jekyll -v || true
-
       # -------------------------------
-      # Build Portfolio (Jekyll) → mlr.dev/
+      # Build Portfolio → mlr.dev/
       # -------------------------------
       - name: Install Jekyll
-        run: |
-          gem install jekyll:4.3.2
+        run: gem install jekyll:4.3.2
 
-      - name: Build Portfolio (Jekyll)
-        run: |
-          jekyll build -s portfolio -d site-dist
+      - name: Build Portfolio
+        run: jekyll build -s portfolio -d site-dist
 
-      # Quick debug of portfolio artifact contents (non-fatal)
-      - name: Debug portfolio artifact root
-        run: |
-          echo 'Listing site-dist (root):'
-          ls -la site-dist | head || true
-
-      # -------------------------------
-      # Add SPA Fallback for Portfolio
-      # -------------------------------
-      - name: Add SPA Fallback
+      - name: Add Portfolio SPA Fallback
         run: |
           if [ -f site-dist/index.html ]; then
             cp site-dist/index.html site-dist/404.html
-          fi
-
-      # -------------------------------
-      # Copy OpenAPI JSON for Docs
-      # -------------------------------
-      - name: Copy OpenAPI for Docs
-        run: |
-          mkdir -p prism/prism-docs/public
-          if [ -f prism/prism-docs/public/openapi.json ]; then rm prism/prism-docs/public/openapi.json; fi
-          if [ -f prism/prism/apis/openapi.json ]; then
-            cp prism/prism/apis/openapi.json prism/prism-docs/public/openapi.json
-          else
-            echo '{}' > prism/prism-docs/public/openapi.json
           fi
 
       # -------------------------------
@@ -129,16 +95,13 @@ jobs:
         run: |
           cd prism/prism-docs
           if [ -f package.json ]; then
-            corepack enable
-            corepack prepare pnpm@10.14.0 --activate
-            corepack pnpm install
-            corepack pnpm run build
+            pnpm install
+            pnpm run build
             mkdir -p ../../site-dist/prism/docs
             cp -r dist/* ../../site-dist/prism/docs/
           else
             mkdir -p ../../site-dist/prism/docs
             echo '<!doctype html><title>No Docs</title>' > ../../site-dist/prism/docs/index.html
-            cp ../../site-dist/prism/docs/index.html ../../site-dist/prism/docs/404.html
           fi
 
           # Prism landing page
@@ -151,25 +114,14 @@ jobs:
           <p><a href="./docs/">View Documentation</a></p>
           HTML
 
-      # Add SPA fallback inside docs so deep links resolve on Pages
-      - name: Add Docs 404 fallback
+      - name: Add Docs SPA Fallback
         run: |
           if [ -f site-dist/prism/docs/index.html ]; then
             cp site-dist/prism/docs/index.html site-dist/prism/docs/404.html
           fi
 
-      # Debug listings to verify docs exist in artifact
-      - name: Debug docs output
-        run: |
-          echo 'Listing built docs dist:'
-          ls -la prism/prism-docs/dist | head || true
-          echo 'Listing artifact docs path:'
-          ls -la site-dist/prism/docs | head || true
-          # Quick check for base path reference (non-fatal)
-          grep -n "prism/docs" -R prism/prism-docs/dist 2>/dev/null | head || true
-
       # -------------------------------
-      # Add CNAME for custom domain
+      # Add CNAME + Disable Jekyll
       # -------------------------------
       - name: Add CNAME
         run: |
@@ -177,10 +129,8 @@ jobs:
             echo "${{ vars.PAGES_CNAME }}" > site-dist/CNAME
           fi
 
-      # Disable Jekyll processing to avoid underscore/asset issues
       - name: Disable Jekyll
-        run: |
-          touch site-dist/.nojekyll
+        run: touch site-dist/.nojekyll
 
       # -------------------------------
       # Upload artifact
