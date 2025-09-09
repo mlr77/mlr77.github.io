@@ -35,22 +35,6 @@ jobs:
           path: portfolio
 
       # -------------------------------
-      # Checkout only prism-docs folder
-      # -------------------------------
-      - name: Checkout Prism Docs subdir only
-        uses: actions/checkout@v4
-        with:
-          repository: mlr77/prism
-          ref: main
-          path: prism
-          sparse-checkout: |
-            prism-docs
-            prism/apis/openapi.json
-            backend/docs/openapi.json
-          sparse-checkout-cone-mode: false
-          token: ${{ secrets.PRISM_REPO_TOKEN }}
-
-      # -------------------------------
       # Setup Ruby (for portfolio)
       # -------------------------------
       - name: Setup Ruby
@@ -67,124 +51,24 @@ jobs:
       - name: Add SPA Fallback for Portfolio
         run: cp site-dist/index.html site-dist/404.html || true
 
-      # -------------------------------
-      # Setup Node + pnpm (for prism-docs)
-      # -------------------------------
-      - name: Setup Node & pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.14.0
-          run_install: false
-
-      # Ensure OpenAPI spec is placed where the docs expect
-      - name: Copy OpenAPI for Docs
-        run: |
-          set -e
-          mkdir -p prism/prism-docs/public prism/prism-docs/apis
-          SRC=""
-          # 1) Prefer a committed docs spec if present
-          if [ -s prism/prism-docs/apis/openapi.json ]; then
-            SRC="prism/prism-docs/apis/openapi.json"
-          # 2) Next, the canonical repo path
-          elif [ -f prism/prism/apis/openapi.json ]; then
-            SRC="prism/prism/apis/openapi.json"
-          # 3) Legacy backend location
-          elif [ -f prism/backend/docs/openapi.json ]; then
-            SRC="prism/backend/docs/openapi.json"
-          fi
-
-          if [ -n "$SRC" ]; then
-            echo "Using OpenAPI from $SRC"
-            cp "$SRC" prism/prism-docs/apis/openapi.json
-            cp "$SRC" prism/prism-docs/public/openapi.json
-          else
-            echo "No OpenAPI found. Creating a minimal valid stub."
-            cat > prism/prism-docs/apis/openapi.json <<'JSON'
-            {
-              "openapi": "3.1.0",
-              "info": { "title": "PRISM API", "version": "0.0.0" },
-              "paths": {}
-            }
-            JSON
-            cp prism/prism-docs/apis/openapi.json prism/prism-docs/public/openapi.json
-          fi
-
-          echo "OpenAPI header (apis/openapi.json):"
-          grep -E '"openapi"|"swagger"|"info"' -n prism/prism-docs/apis/openapi.json | head -n 5 || true
-
-      # Seed a fallback file under the basePath so Zudoku's build doesn't error when relocating 404.html
-      - name: Seed Docs 404 for Zudoku
-        run: |
-          mkdir -p prism/prism-docs/public/prism/docs
-          if [ ! -f prism/prism-docs/public/prism/docs/404.html ]; then
-            printf '%s\n' \
-              '<!doctype html>' \
-              '<meta charset="utf-8">' \
-              '<title>Prism Docs</title>' \
-              '<meta http-equiv="refresh" content="0; url=./">' \
-              > prism/prism-docs/public/prism/docs/404.html
-          fi
-
-      # Also seed a 404 route page so the prerender generates dist/prism/docs/404.html
-      - name: Seed Docs 404 Route Page (MDX)
-        run: |
-          mkdir -p prism/prism-docs/pages
-          if [ ! -f prism/prism-docs/pages/404.mdx ]; then
-            printf '%s\n' \
-              '---' \
-              'title: Not Found' \
-              '---' \
-              '' \
-              '# Not Found' \
-              '' \
-              'This page was not found. Returning to the docs home...' \
-              '' \
-              '<script>' \
-              "if (typeof window !== 'undefined') {" \
-              "  const base = '/prism/docs/';" \
-              "  const to = new URL('.', window.location.origin + base).pathname;" \
-              "  window.location.replace(to);" \
-              '}' \
-              '</script>' \
-              > prism/prism-docs/pages/404.mdx
-          fi
 
       # -------------------------------
-      # Build Prism Docs → mlr.dev/prism/docs
+      # Prism landing page → redirect to subdomain
       # -------------------------------
-      - name: Build Prism Docs
-        env:
-          BASE_URL: /prism/docs
-          PUBLIC_BASE_PATH: /prism/docs
-          ZUDOKU_PUBLIC_API_URL: /prism/docs/openapi.json
+      - name: Create /prism redirect page
         run: |
-          cd prism/prism-docs
-          if [ -f package.json ]; then
-            pnpm install
-            pnpm run build
-            mkdir -p ../../site-dist/prism/docs
-            cp -r dist/* ../../site-dist/prism/docs/
-          else
-            mkdir -p ../../site-dist/prism/docs
-            echo '<!doctype html><title>No Docs</title>' > ../../site-dist/prism/docs/index.html
-          fi
-
-          # Prism landing page
-          mkdir -p ../../site-dist/prism
-          cat > ../../site-dist/prism/index.html <<'HTML'
+          mkdir -p site-dist/prism
+          cat > site-dist/prism/index.html <<'HTML'
           <!doctype html>
           <meta charset="utf-8">
-          <title>Prism</title>
-          <h1>Welcome to Prism</h1>
-          <p><a href="./docs/">View Documentation</a></p>
+          <title>Prism Docs</title>
+          <meta http-equiv="refresh" content="0; url=https://prism.mlr.dev/">
+          <link rel="canonical" href="https://prism.mlr.dev/">
+          <noscript>
+            <p>Redirecting to <a href="https://prism.mlr.dev/">Prism Docs</a>…</p>
+          </noscript>
+          <script>location.replace('https://prism.mlr.dev/');</script>
           HTML
-
-
-      - name: Add Docs SPA Fallback
-        run: |
-          if [ -f site-dist/prism/docs/index.html ]; then
-            cp site-dist/prism/docs/index.html site-dist/prism/docs/404.html
-          fi
 
       # -------------------------------
       # Add CNAME + Disable Jekyll
