@@ -2268,7 +2268,7 @@ const SVGNS = 'http://www.w3.org/2000/svg';
     if (m === 'fast') { out.innerHTML = '<div class="bubble m"><span class="who">Model, instant reply</span>The ball costs <b>10 cents</b>.</div><p class="small" style="margin:0">Wrong: then the bat would be $1.10 and the total $1.20.</p>'; return; }
     out.innerHTML = '<div class="bubble m" id="thinkB"><span class="who">Model, thinking</span></div>';
     const b = document.getElementById('thinkB'); let i = 0;
-    const add = () => { if (i < STEPS.length) { b.insertAdjacentHTML('beforeend', `<div class="small" style="margin:2px 0">${STEPS[i++]}</div>`); } else { b.insertAdjacentHTML('beforeend', '<div style="margin-top:6px">The ball costs <b>5 cents</b>.</div>'); clearInterval(timer); } };
+    const add = () => { if (i < STEPS.length) { b.insertAdjacentHTML('beforeend', `<div class="small" style="margin:2px 0">${STEPS[i++]}</div>`); } else { b.insertAdjacentHTML('beforeend', '<div style="margin-top:6px">The ball costs <b>5 cents</b>.</div>'); i++; clearInterval(timer); } };
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { while (i <= STEPS.length) add(); return; }
     add(); timer = setInterval(add, 900);
   }
