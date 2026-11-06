@@ -132,10 +132,8 @@ h2{font-family:var(--display);font-size:22px;margin:0 0 8px;font-weight:700}
 
 /* ---------- chapters ---------- */
 .toc{display:flex;flex-wrap:wrap;gap:8px}
-.toc a{color:var(--ink);text-decoration:none;font-size:14px;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-.toc a:hover{border-color:var(--muted)}
-.toc a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-.toc b{color:var(--muted);font-weight:700;margin-right:4px}
+.toc button{font-size:14px;padding:6px 12px}
+.toc button b{color:var(--muted);font-weight:700;margin-right:4px}
 .chapter{display:grid;gap:16px;padding-top:38px;border-top:1px solid var(--line);scroll-margin-top:16px}
 .chapter-head{display:grid;gap:6px}
 h3{font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,36px);line-height:1.1;margin:0;text-wrap:balance}
@@ -232,7 +230,8 @@ input[type=range]{width:min(100%,360px);accent-color:var(--amber)}
 .slider{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-size:15px}
 .refs{font-size:15px;columns:2 280px;column-gap:24px;padding-left:20px;margin:0}
 .refs li{margin-bottom:6px;break-inside:avoid}
-.refs a{color:var(--blue)}
+.refs cite{font-style:normal;font-weight:700}
+.refs .rid{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 
 
 /* chapter 1: neuron */
@@ -364,22 +363,22 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
     <h1>From one neuron to GPT</h1>
     <p class="lede">Sixteen short, hands-on chapters: how a single neuron decides, how a grid of weights runs thousands of them at once, how those weights are learned, how that turns into assistants that read, see, listen, reason and look things up, and where they still fail.</p>
     <nav class="toc" aria-label="Chapters">
-      <a href="#neuron"><b>1</b>The grandma neuron</a>
-      <a href="#recipes"><b>2</b>Weighted recipes</a>
-      <a href="#learning"><b>3</b>How the numbers get learned</a>
-      <a href="#meaning"><b>4</b>Words become points</a>
-      <a href="#anydata"><b>5</b>Everything becomes numbers</a>
-      <a href="#attention"><b>6</b>Words look at each other</a>
-      <a href="#block"><b>7</b>Inside one block</a>
-      <a href="#family"><b>8</b>Transformer, BERT, GPT</a>
-      <a href="#history"><b>9</b>Seventy years of talking machines</a>
-      <a href="#experts"><b>10</b>A team of specialists</a>
-      <a href="#size"><b>11</b>Is smaller smarter?</a>
-      <a href="#truth"><b>12</b>Averages, not truth</a>
-      <a href="#shaping"><b>13</b>From raw model to assistant</a>
-      <a href="#thinking"><b>14</b>Thinking before answering</a>
-      <a href="#retrieval"><b>15</b>Looking things up</a>
-      <a href="#failures"><b>16</b>When it fails, and who checks</a>
+      <button type="button" data-go="neuron"><b>1</b>The grandma neuron</button>
+      <button type="button" data-go="recipes"><b>2</b>Weighted recipes</button>
+      <button type="button" data-go="learning"><b>3</b>How the numbers get learned</button>
+      <button type="button" data-go="meaning"><b>4</b>Words become points</button>
+      <button type="button" data-go="anydata"><b>5</b>Everything becomes numbers</button>
+      <button type="button" data-go="attention"><b>6</b>Words look at each other</button>
+      <button type="button" data-go="block"><b>7</b>Inside one block</button>
+      <button type="button" data-go="family"><b>8</b>Transformer, BERT, GPT</button>
+      <button type="button" data-go="history"><b>9</b>Seventy years of talking machines</button>
+      <button type="button" data-go="experts"><b>10</b>A team of specialists</button>
+      <button type="button" data-go="size"><b>11</b>Is smaller smarter?</button>
+      <button type="button" data-go="truth"><b>12</b>Averages, not truth</button>
+      <button type="button" data-go="shaping"><b>13</b>From raw model to assistant</button>
+      <button type="button" data-go="thinking"><b>14</b>Thinking before answering</button>
+      <button type="button" data-go="retrieval"><b>15</b>Looking things up</button>
+      <button type="button" data-go="failures"><b>16</b>When it fails, and who checks</button>
     </nav>
   </header>
 
@@ -1169,39 +1168,40 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
 
   <section class="chapter" id="reading">
     <h2>Further reading</h2>
+    <p class="small" style="margin:0 0 10px">Search for any title by name. arXiv numbers and DOIs are given where they exist.</p>
     <ul class="refs">
-      <li><a href="https://dl.acm.org/doi/10.1145/365153.365168">ELIZA</a> (Weizenbaum, 1966)</li>
-      <li><a href="https://www.bioinf.jku.at/publications/older/2604.pdf">Long Short-Term Memory</a> (Hochreiter &amp; Schmidhuber, 1997)</li>
-      <li><a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought Prompting Elicits Reasoning</a> (Wei et al., 2022)</li>
-      <li><a href="https://arxiv.org/abs/2501.12948">DeepSeek-R1</a> (2025)</li>
-      <li><a href="https://arcprize.org/blog/oai-o3-pub-breakthrough">OpenAI o3 on ARC-AGI</a> (ARC Prize, 2024)</li>
-      <li><a href="https://arxiv.org/abs/2608.03416">AI World Cup 2026: Benchmarking LLMs for End-to-End Football Tournament Prediction</a> (Shianifar &amp; Faiud, 2026)</li>
-      <li><a href="https://www.theregister.com/2026/02/13/anthropic_c_compiler">OK, so Anthropic's AI built a C compiler</a> (The Register, 2026)</li>
-      <li><a href="https://www.nature.com/articles/323533a0">Learning representations by back-propagating errors</a> (Rumelhart, Hinton &amp; Williams, 1986)</li>
-      <li><a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a> (top-p sampling, 2019)</li>
-      <li><a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">Defeating Nondeterminism in LLM Inference</a> (Thinking Machines Lab, 2025)</li>
-      <li><a href="https://arxiv.org/abs/2203.02155">Training language models to follow instructions with human feedback</a> (InstructGPT, 2022)</li>
-      <li><a href="https://arxiv.org/abs/2305.18290">Direct Preference Optimization</a> (DPO, 2023)</li>
-      <li><a href="https://arxiv.org/abs/2106.09685">LoRA: Low-Rank Adaptation of Large Language Models</a> (2021)</li>
-      <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (RAG, 2020)</li>
-      <li><a href="https://www.nature.com/articles/nature03687">Invariant visual representation by single neurons in the human brain</a> (Quian Quiroga et al., 2005)</li>
-      <li><a href="https://distill.pub/2021/multimodal-neurons/">Multimodal Neurons in Artificial Neural Networks</a> (Goh et al., 2021)</li>
-      <li><a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/">Scaling Monosemanticity</a> (Anthropic, 2024)</li>
-      <li><a href="https://arxiv.org/abs/1301.3781">Efficient Estimation of Word Representations</a> (word2vec, 2013)</li>
-      <li><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> (Vaswani et al., 2017)</li>
-      <li><a href="https://arxiv.org/abs/1810.04805">BERT</a> (Devlin et al., 2018)</li>
-      <li><a href="https://arxiv.org/abs/2010.11929">An Image is Worth 16x16 Words</a> (Vision Transformer, 2020)</li>
-      <li><a href="https://arxiv.org/abs/2103.00020">Learning Transferable Visual Models From Natural Language Supervision</a> (CLIP, 2021)</li>
-      <li><a href="https://arxiv.org/abs/2212.04356">Robust Speech Recognition via Large-Scale Weak Supervision</a> (Whisper, 2022)</li>
-      <li><a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a> (GPT-3, 2020)</li>
-      <li><a href="https://arxiv.org/abs/1701.06538">Outrageously Large Neural Networks</a> (mixture of experts, 2017)</li>
-      <li><a href="https://arxiv.org/abs/2101.03961">Switch Transformers</a> (2021)</li>
-      <li><a href="https://arxiv.org/abs/2401.04088">Mixtral of Experts</a> (2024)</li>
-      <li><a href="https://arxiv.org/abs/2412.19437">DeepSeek-V3 Technical Report</a> (2024)</li>
-      <li><a href="https://arxiv.org/abs/1812.11118">Reconciling modern machine learning and the bias-variance trade-off</a> (Belkin et al., 2019)</li>
-      <li><a href="https://arxiv.org/abs/1912.02292">Deep Double Descent</a> (Nakkiran et al., 2019)</li>
-      <li><a href="https://arxiv.org/abs/2001.08361">Scaling Laws for Neural Language Models</a> (Kaplan et al., 2020)</li>
-      <li><a href="https://arxiv.org/abs/2203.15556">Training Compute-Optimal Large Language Models</a> (Chinchilla, 2022)</li>
+      <li><cite>ELIZA</cite> (Weizenbaum, 1966) <span class="rid">DOI 10.1145/365153.365168</span></li>
+      <li><cite>Long Short-Term Memory</cite> (Hochreiter &amp; Schmidhuber, 1997)</li>
+      <li><cite>Chain-of-Thought Prompting Elicits Reasoning</cite> (Wei et al., 2022) <span class="rid">arXiv 2201.11903</span></li>
+      <li><cite>DeepSeek-R1</cite> (2025) <span class="rid">arXiv 2501.12948</span></li>
+      <li><cite>OpenAI o3 on ARC-AGI</cite> (ARC Prize, 2024)</li>
+      <li><cite>AI World Cup 2026: Benchmarking LLMs for End-to-End Football Tournament Prediction</cite> (Shianifar &amp; Faiud, 2026) <span class="rid">arXiv 2608.03416</span></li>
+      <li><cite>OK, so Anthropic's AI built a C compiler</cite> (The Register, 2026)</li>
+      <li><cite>Learning representations by back-propagating errors</cite> (Rumelhart, Hinton &amp; Williams, 1986) <span class="rid">DOI 10.1038/323533a0</span></li>
+      <li><cite>The Curious Case of Neural Text Degeneration</cite> (top-p sampling, 2019) <span class="rid">arXiv 1904.09751</span></li>
+      <li><cite>Defeating Nondeterminism in LLM Inference</cite> (Thinking Machines Lab, 2025)</li>
+      <li><cite>Training language models to follow instructions with human feedback</cite> (InstructGPT, 2022) <span class="rid">arXiv 2203.02155</span></li>
+      <li><cite>Direct Preference Optimization</cite> (DPO, 2023) <span class="rid">arXiv 2305.18290</span></li>
+      <li><cite>LoRA: Low-Rank Adaptation of Large Language Models</cite> (2021) <span class="rid">arXiv 2106.09685</span></li>
+      <li><cite>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</cite> (RAG, 2020) <span class="rid">arXiv 2005.11401</span></li>
+      <li><cite>Invariant visual representation by single neurons in the human brain</cite> (Quian Quiroga et al., 2005) <span class="rid">DOI 10.1038/nature03687</span></li>
+      <li><cite>Multimodal Neurons in Artificial Neural Networks</cite> (Goh et al., 2021)</li>
+      <li><cite>Scaling Monosemanticity</cite> (Anthropic, 2024)</li>
+      <li><cite>Efficient Estimation of Word Representations</cite> (word2vec, 2013) <span class="rid">arXiv 1301.3781</span></li>
+      <li><cite>Attention Is All You Need</cite> (Vaswani et al., 2017) <span class="rid">arXiv 1706.03762</span></li>
+      <li><cite>BERT</cite> (Devlin et al., 2018) <span class="rid">arXiv 1810.04805</span></li>
+      <li><cite>An Image is Worth 16x16 Words</cite> (Vision Transformer, 2020) <span class="rid">arXiv 2010.11929</span></li>
+      <li><cite>Learning Transferable Visual Models From Natural Language Supervision</cite> (CLIP, 2021) <span class="rid">arXiv 2103.00020</span></li>
+      <li><cite>Robust Speech Recognition via Large-Scale Weak Supervision</cite> (Whisper, 2022) <span class="rid">arXiv 2212.04356</span></li>
+      <li><cite>Language Models are Few-Shot Learners</cite> (GPT-3, 2020) <span class="rid">arXiv 2005.14165</span></li>
+      <li><cite>Outrageously Large Neural Networks</cite> (mixture of experts, 2017) <span class="rid">arXiv 1701.06538</span></li>
+      <li><cite>Switch Transformers</cite> (2021) <span class="rid">arXiv 2101.03961</span></li>
+      <li><cite>Mixtral of Experts</cite> (2024) <span class="rid">arXiv 2401.04088</span></li>
+      <li><cite>DeepSeek-V3 Technical Report</cite> (2024) <span class="rid">arXiv 2412.19437</span></li>
+      <li><cite>Reconciling modern machine learning and the bias-variance trade-off</cite> (Belkin et al., 2019) <span class="rid">arXiv 1812.11118</span></li>
+      <li><cite>Deep Double Descent</cite> (Nakkiran et al., 2019) <span class="rid">arXiv 1912.02292</span></li>
+      <li><cite>Scaling Laws for Neural Language Models</cite> (Kaplan et al., 2020) <span class="rid">arXiv 2001.08361</span></li>
+      <li><cite>Training Compute-Optimal Large Language Models</cite> (Chinchilla, 2022) <span class="rid">arXiv 2203.15556</span></li>
     </ul>
   </section>
 </div>
@@ -2370,6 +2370,11 @@ const SVGNS = 'http://www.w3.org/2000/svg';
   }
   [g, r].forEach(e => e.addEventListener('input', backlog)); backlog();
 })();
+</script>
+<script>
+document.querySelectorAll('[data-go]').forEach(function (b) {
+  b.addEventListener('click', function () { document.getElementById(b.dataset.go).scrollIntoView({ behavior: 'smooth' }); });
+});
 </script>
 
 </body>
