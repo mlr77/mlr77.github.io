@@ -351,12 +351,51 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
 .card p{margin:0;font-size:14.5px}
 .card .eg{font-size:13.5px;color:var(--muted)}
 
+.srcline{font-size:13px;color:var(--muted);margin:4px 0 0;max-width:80ch}
+ul.biblio{list-style:none;padding:0;margin:0;font-size:15px;max-width:80ch}
+ul.biblio li{padding-left:2em;text-indent:-2em;overflow-wrap:anywhere;margin:0 0 8px;break-inside:avoid}
+.citeme{break-inside:avoid}
+.citeme{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--stage);max-width:80ch;font-size:15px}
+/* contents: floating sidebar on wide screens, menu drawer on narrow ones */
+.sidenav{position:fixed;z-index:40;background:var(--stage);border-right:1px solid var(--line);overflow-y:auto;
+  top:0;bottom:0;left:0;width:min(84vw,320px);padding:calc(env(safe-area-inset-top,0px) + 14px) 14px calc(env(safe-area-inset-bottom,0px) + 20px) calc(env(safe-area-inset-left,0px) + 14px);
+  transform:translateX(-105%);transition:transform .28s ease;font-size:14px}
+.sidenav.open{transform:none;box-shadow:8px 0 30px rgba(0,0,0,.18)}
+.navshade{position:fixed;inset:0;z-index:39;background:rgba(20,20,22,.35)}
+.navbtn{position:fixed;z-index:38;top:calc(env(safe-area-inset-top,0px) + 10px);right:calc(env(safe-area-inset-right,0px) + 12px);
+  width:46px;height:46px;border-radius:12px;padding:0;display:grid;place-content:center;gap:5px;background:var(--stage);border:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.navbtn span{display:block;width:20px;height:2px;border-radius:1px;background:var(--ink)}
+.sn-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.sn-head span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.sn-close{border:0;font-size:26px;line-height:1;padding:2px 8px}
+.sn-list,.sn-sub{list-style:none;margin:0;padding:0}
+.sn-list > li{margin:0 0 2px}
+.sidenav button.sn-ch,.sidenav button.sn-s{display:grid;grid-template-columns:2em 1fr;gap:4px;width:100%;text-align:left;border:0;border-radius:8px;padding:6px 8px;background:transparent;color:var(--ink);font:inherit;line-height:1.3}
+.sidenav button.sn-ch:hover,.sidenav button.sn-s:hover{background:var(--bg)}
+.sidenav button.sn-ch b{color:var(--muted);font-variant-numeric:tabular-nums}
+.sidenav button.sn-s{grid-template-columns:1fr;padding:4px 8px 4px 2.6em;font-size:13px;color:var(--muted)}
+.sn-sub{display:none}
+.sn-list > li.cur .sn-sub{display:block}
+.sn-list > li.cur > button.sn-ch{background:var(--amber-soft);font-weight:700}
+.sidenav button.sn-s.cur{color:var(--ink);font-weight:700}
+@media (max-width:1199px){ header{padding-right:56px} }
+@media (min-width:1200px){
+  .navbtn,.navshade,.sn-close{display:none!important}
+  .sidenav{transform:none;width:250px;top:16px;bottom:16px;left:max(16px, env(safe-area-inset-left,0px));border:1px solid var(--line);border-radius:14px;padding:14px 10px 18px;box-shadow:none}
+  .wrap{margin-left:max(286px, calc((100vw - 1080px) / 2))}
+}
 @media (prefers-reduced-motion: reduce){
   .k,.t,.arrow,#small,#big,.cell,.card-out,.ln,.bar .fill,.chip{transition:none}
   .pt{animation:none;opacity:0}
 }
 </style>
 
+<button type="button" class="navbtn" id="navBtn" aria-label="Open contents" aria-expanded="false" aria-controls="sideNav"><span></span><span></span><span></span></button>
+<div class="navshade" id="navShade" hidden></div>
+<nav class="sidenav" id="sideNav" aria-label="Contents">
+  <div class="sn-head"><span>Contents</span><button type="button" class="sn-close" id="navClose" aria-label="Close contents">&times;</button></div>
+  <ol class="sn-list" id="snList"></ol>
+</nav>
 <div class="wrap">
   <header>
     <div class="eyebrow">How language models work, for anyone who knows basic algebra</div>
@@ -420,6 +459,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         <p class="small">Concept cells are not the only place a memory lives. Each responds to a few related things, and many cells share each memory. AI is similar: most ideas are spread across many artificial neurons. Still, researchers have found units that act like concept cells, such as a feature inside one of Anthropic's Claude models that fired for the Golden Gate Bridge in text and in pictures.</p>
       </div>
     </div>
+    <p class="srcline">Sources: Quian Quiroga et al. 2005; Goh et al. 2021; Templeton et al. 2024.</p>
   </section>
 
   <section class="chapter" id="recipes">
@@ -597,6 +637,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         <p class="small">With one weight the valley is a simple curve. With billions, it is a landscape with billions of directions, and training only ever looks at the slope where it is standing.</p>
       </div>
     </div>
+    <p class="srcline">Sources: Rumelhart, Hinton, and Williams 1986.</p>
   </section>
 
   <!-- ===================== CHAPTER 2 ===================== -->
@@ -623,6 +664,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       <div class="readout" id="mapRead" aria-live="polite"></div>
       <p class="small">A hand-drawn illustration. Real models use hundreds or thousands of numbers per word (BERT-base uses 768), and the arithmetic only lands close to the target, not exactly on it. Two numbers are shown here as left–right and up–down.</p>
     </div>
+    <p class="srcline">Sources: Mikolov et al. 2013; Devlin et al. 2018.</p>
   </section>
 
 
@@ -654,6 +696,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       <div class="readout" id="lRead"></div>
       <p class="small">Illustrative. In models trained on many languages, or on pictures paired with captions, words and images with the same meaning tend to land near each other. It is mostly true, not perfectly: languages with little training text get blurrier positions, and some words carry shades of meaning no translation matches.</p>
     </div>
+    <p class="srcline">Sources: Dosovitskiy et al. 2020; Radford et al. 2021; Radford et al. 2022.</p>
   </section>
 
   <!-- ===================== CHAPTER 3 ===================== -->
@@ -686,6 +729,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       </div>
       <p class="small">Illustrative weights. Unlike Chapter 2, these weights are not fixed. They are worked out fresh for every sentence. Real models run dozens of these in parallel and stack dozens of layers.</p>
     </div>
+    <p class="srcline">Sources: Vaswani et al. 2017.</p>
   </section>
 
 
@@ -748,6 +792,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       </div>
       <div class="readout" id="ctxRead"></div>
     </div>
+    <p class="srcline">Sources: Vaswani et al. 2017.</p>
   </section>
 
   <!-- ===================== CHAPTER 4 ===================== -->
@@ -779,6 +824,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       <div class="scale" id="scale"></div>
       <p class="small" style="margin:0">Sizes as published in each paper. Most newer frontier models do not disclose their size.</p>
     </div>
+    <p class="srcline">Sources: Vaswani et al. 2017; Devlin et al. 2018; Brown et al. 2020.</p>
   </section>
 
 
@@ -795,6 +841,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       <ol class="tl" id="timeline"></ol>
       <p class="small" style="margin:0">Companies have stopped publishing the size of most recent models, so this timeline gives sizes only where they were published.</p>
     </div>
+    <p class="srcline">Sources: Weizenbaum 1966; Hochreiter and Schmidhuber 1997; Mikolov et al. 2013; Vaswani et al. 2017; Brown et al. 2020; Chollet 2024; DeepSeek-AI 2025.</p>
   </section>
 
   <!-- ===================== CHAPTER 7: experts ===================== -->
@@ -831,6 +878,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         </ul>
       </div>
     </div>
+    <p class="srcline">Sources: Shazeer et al. 2017; Fedus, Zoph, and Shazeer 2021; Jiang et al. 2024; DeepSeek-AI 2024.</p>
   </section>
 
   <!-- ===================== CHAPTER 5 ===================== -->
@@ -874,6 +922,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         </ul>
       </div>
     </div>
+    <p class="srcline">Sources: Belkin et al. 2019; Nakkiran et al. 2019; Kaplan et al. 2020; Hoffmann et al. 2022.</p>
   </section>
 
   <!-- ===================== CHAPTER 9: norms & hallucination ===================== -->
@@ -957,7 +1006,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         <p style="margin:0;max-width:64ch">At T = 0 the model always takes the top word, so the same question should give the same reply. On real servers it often doesn't. Computers round after every addition, so the order of additions changes the result. Your browser just computed this:</p>
         <p style="margin:0"><code class="fp" id="fpA"></code><br>but<br><code class="fp" id="fpB"></code></p>
         <p style="margin:0;max-width:64ch">A GPU adds up thousands of numbers in chunks. How it chunks them often depends on how many other people's requests are processed alongside yours. A different batch gives slightly different scores. When two words are nearly tied, that tiny difference can flip the winner, and the rest of the reply goes a different way. Mixture-of-experts models add another source: when an expert is full, some systems reroute or drop words depending on who else is in the batch.</p>
-        <p class="small" style="margin:0">Batch-invariant math can make replies repeatable, at some cost in speed (Thinking Machines Lab, 2025).</p>
+        <p class="small" style="margin:0">Batch-invariant math can make replies repeatable, at some cost in speed (He 2025).</p>
       </div>
     </div>
     <div class="cols">
@@ -980,6 +1029,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         </ul>
       </div>
     </div>
+    <p class="srcline">Sources: Holtzman et al. 2019; He 2025.</p>
   </section>
 
 
@@ -1032,6 +1082,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         </tbody>
       </table>
     </div>
+    <p class="srcline">Sources: Ouyang et al. 2022; Rafailov et al. 2023; Hu et al. 2021; Lewis et al. 2020.</p>
   </section>
 
 
@@ -1074,6 +1125,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       <svg class="chart" id="pileChart" viewBox="0 0 800 300" role="img" aria-label="Chance a whole task succeeds as steps increase"></svg>
       <div class="readout" id="pileRead"></div>
     </div>
+    <p class="srcline">Sources: Wei et al. 2022; DeepSeek-AI 2025.</p>
   </section>
 
   <!-- CHAPTER: retrieval -->
@@ -1114,6 +1166,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         <p class="small">Retrieval fixes missing facts, not reasoning. If the right passage is never found, the model answers from memory anyway, and just as confidently.</p>
       </div>
     </div>
+    <p class="srcline">Sources: Lewis et al. 2020; Mikolov et al. 2013.</p>
   </section>
 
   <!-- CHAPTER: failures -->
@@ -1135,7 +1188,7 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
         <li><b>Best at matches, sixth overall.</b> Claude Sonnet 4.6 called the most group results (64%) but finished sixth. GPT-5.5 Thinking ranked eighth on matches but won, as the only model to pick Spain as champion.</li>
         <li><b>Confidence meant nothing.</b> Each model rated its own confidence. Those ratings had no relationship with accuracy (correlation −0.06). The most confident model finished seventh.</li>
       </ul>
-      <p class="small" style="margin:0">Source: Shianifar and Faiud, “AI World Cup 2026,” July 31, 2026. One tournament is a small sample; the pattern, not the ranking, is the lesson.</p>
+      <p class="small" style="margin:0">Data: Shianifar and Faiud (2026). One tournament is a small sample; the pattern, not the ranking, is the lesson.</p>
     </div>
 
     <div class="cols">
@@ -1164,45 +1217,52 @@ ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
       <div class="slider"><label for="revRate">Drafts experts can properly review per day</label><input type="range" id="revRate" min="5" max="100" step="5" value="25"><span class="small" id="revLbl"></span></div>
       <div class="readout" id="backlogRead"></div>
     </div>
+    <p class="srcline">Sources: Shianifar and Faiud 2026; Vaughan-Nichols 2026.</p>
   </section>
 
   <section class="chapter" id="reading">
-    <h2>Further reading</h2>
-    <p class="small" style="margin:0 0 10px">Search for any title by name. arXiv numbers and DOIs are given where they exist.</p>
-    <ul class="refs">
-      <li><cite>ELIZA</cite> (Weizenbaum, 1966) <span class="rid">DOI 10.1145/365153.365168</span></li>
-      <li><cite>Long Short-Term Memory</cite> (Hochreiter &amp; Schmidhuber, 1997)</li>
-      <li><cite>Chain-of-Thought Prompting Elicits Reasoning</cite> (Wei et al., 2022) <span class="rid">arXiv 2201.11903</span></li>
-      <li><cite>DeepSeek-R1</cite> (2025) <span class="rid">arXiv 2501.12948</span></li>
-      <li><cite>OpenAI o3 on ARC-AGI</cite> (ARC Prize, 2024)</li>
-      <li><cite>AI World Cup 2026: Benchmarking LLMs for End-to-End Football Tournament Prediction</cite> (Shianifar &amp; Faiud, 2026) <span class="rid">arXiv 2608.03416</span></li>
-      <li><cite>OK, so Anthropic's AI built a C compiler</cite> (The Register, 2026)</li>
-      <li><cite>Learning representations by back-propagating errors</cite> (Rumelhart, Hinton &amp; Williams, 1986) <span class="rid">DOI 10.1038/323533a0</span></li>
-      <li><cite>The Curious Case of Neural Text Degeneration</cite> (top-p sampling, 2019) <span class="rid">arXiv 1904.09751</span></li>
-      <li><cite>Defeating Nondeterminism in LLM Inference</cite> (Thinking Machines Lab, 2025)</li>
-      <li><cite>Training language models to follow instructions with human feedback</cite> (InstructGPT, 2022) <span class="rid">arXiv 2203.02155</span></li>
-      <li><cite>Direct Preference Optimization</cite> (DPO, 2023) <span class="rid">arXiv 2305.18290</span></li>
-      <li><cite>LoRA: Low-Rank Adaptation of Large Language Models</cite> (2021) <span class="rid">arXiv 2106.09685</span></li>
-      <li><cite>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</cite> (RAG, 2020) <span class="rid">arXiv 2005.11401</span></li>
-      <li><cite>Invariant visual representation by single neurons in the human brain</cite> (Quian Quiroga et al., 2005) <span class="rid">DOI 10.1038/nature03687</span></li>
-      <li><cite>Multimodal Neurons in Artificial Neural Networks</cite> (Goh et al., 2021)</li>
-      <li><cite>Scaling Monosemanticity</cite> (Anthropic, 2024)</li>
-      <li><cite>Efficient Estimation of Word Representations</cite> (word2vec, 2013) <span class="rid">arXiv 1301.3781</span></li>
-      <li><cite>Attention Is All You Need</cite> (Vaswani et al., 2017) <span class="rid">arXiv 1706.03762</span></li>
-      <li><cite>BERT</cite> (Devlin et al., 2018) <span class="rid">arXiv 1810.04805</span></li>
-      <li><cite>An Image is Worth 16x16 Words</cite> (Vision Transformer, 2020) <span class="rid">arXiv 2010.11929</span></li>
-      <li><cite>Learning Transferable Visual Models From Natural Language Supervision</cite> (CLIP, 2021) <span class="rid">arXiv 2103.00020</span></li>
-      <li><cite>Robust Speech Recognition via Large-Scale Weak Supervision</cite> (Whisper, 2022) <span class="rid">arXiv 2212.04356</span></li>
-      <li><cite>Language Models are Few-Shot Learners</cite> (GPT-3, 2020) <span class="rid">arXiv 2005.14165</span></li>
-      <li><cite>Outrageously Large Neural Networks</cite> (mixture of experts, 2017) <span class="rid">arXiv 1701.06538</span></li>
-      <li><cite>Switch Transformers</cite> (2021) <span class="rid">arXiv 2101.03961</span></li>
-      <li><cite>Mixtral of Experts</cite> (2024) <span class="rid">arXiv 2401.04088</span></li>
-      <li><cite>DeepSeek-V3 Technical Report</cite> (2024) <span class="rid">arXiv 2412.19437</span></li>
-      <li><cite>Reconciling modern machine learning and the bias-variance trade-off</cite> (Belkin et al., 2019) <span class="rid">arXiv 1812.11118</span></li>
-      <li><cite>Deep Double Descent</cite> (Nakkiran et al., 2019) <span class="rid">arXiv 1912.02292</span></li>
-      <li><cite>Scaling Laws for Neural Language Models</cite> (Kaplan et al., 2020) <span class="rid">arXiv 2001.08361</span></li>
-      <li><cite>Training Compute-Optimal Large Language Models</cite> (Chinchilla, 2022) <span class="rid">arXiv 2203.15556</span></li>
+    <h2>References</h2>
+    <p class="small" style="margin:0 0 12px;max-width:64ch">Chicago Manual of Style, author-date. Each chapter ends with its sources. arXiv numbers and DOIs are written as text so the explainer contains no web links.</p>
+    <ul class="biblio">
+      <li>Belkin, Mikhail, Daniel Hsu, Siyuan Ma, and Soumik Mandal. 2019. “Reconciling Modern Machine-Learning Practice and the Classical Bias–Variance Trade-Off.” <i>Proceedings of the National Academy of Sciences</i> 116 (32): 15849–54. DOI 10.1073/pnas.1903070116.</li>
+      <li>Brown, Tom B., Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, et al. 2020. “Language Models Are Few-Shot Learners.” Preprint, arXiv 2005.14165.</li>
+      <li>Chollet, François. 2024. “OpenAI o3 Breakthrough High Score on ARC-AGI-Pub.” <i>ARC Prize</i>, December 20, 2024.</li>
+      <li>DeepSeek-AI. 2024. “DeepSeek-V3 Technical Report.” Preprint, arXiv 2412.19437.</li>
+      <li>DeepSeek-AI. 2025. “DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.” Preprint, arXiv 2501.12948.</li>
+      <li>Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. “BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.” Preprint, arXiv 1810.04805.</li>
+      <li>Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, et al. 2020. “An Image Is Worth 16x16 Words: Transformers for Image Recognition at Scale.” Preprint, arXiv 2010.11929.</li>
+      <li>Fedus, William, Barret Zoph, and Noam Shazeer. 2021. “Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity.” Preprint, arXiv 2101.03961.</li>
+      <li>Goh, Gabriel, Nick Cammarata, Chelsea Voss, Shan Carter, Michael Petrov, Ludwig Schubert, Alec Radford, and Chris Olah. 2021. “Multimodal Neurons in Artificial Neural Networks.” <i>Distill</i> 6 (3). DOI 10.23915/distill.00030.</li>
+      <li>He, Horace. 2025. “Defeating Nondeterminism in LLM Inference.” <i>Connectionism</i> (Thinking Machines Lab), September 10, 2025.</li>
+      <li>Hochreiter, Sepp, and Jürgen Schmidhuber. 1997. “Long Short-Term Memory.” <i>Neural Computation</i> 9 (8): 1735–80. DOI 10.1162/neco.1997.9.8.1735.</li>
+      <li>Hoffmann, Jordan, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor Cai, Eliza Rutherford, Diego de Las Casas, et al. 2022. “Training Compute-Optimal Large Language Models.” Preprint, arXiv 2203.15556.</li>
+      <li>Holtzman, Ari, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. 2019. “The Curious Case of Neural Text Degeneration.” Preprint, arXiv 1904.09751.</li>
+      <li>Hu, Edward J., Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. 2021. “LoRA: Low-Rank Adaptation of Large Language Models.” Preprint, arXiv 2106.09685.</li>
+      <li>Jiang, Albert Q., Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bamford, Devendra Singh Chaplot, et al. 2024. “Mixtral of Experts.” Preprint, arXiv 2401.04088.</li>
+      <li>Kaplan, Jared, Sam McCandlish, Tom Henighan, Tom B. Brown, Benjamin Chess, Rewon Child, Scott Gray, Alec Radford, Jeffrey Wu, and Dario Amodei. 2020. “Scaling Laws for Neural Language Models.” Preprint, arXiv 2001.08361.</li>
+      <li>Lewis, Patrick, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, et al. 2020. “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.” Preprint, arXiv 2005.11401.</li>
+      <li>Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. “Efficient Estimation of Word Representations in Vector Space.” Preprint, arXiv 1301.3781.</li>
+      <li>Nakkiran, Preetum, Gal Kaplun, Yamini Bansal, Tristan Yang, Boaz Barak, and Ilya Sutskever. 2019. “Deep Double Descent: Where Bigger Models and More Data Hurt.” Preprint, arXiv 1912.02292.</li>
+      <li>Ouyang, Long, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, et al. 2022. “Training Language Models to Follow Instructions with Human Feedback.” Preprint, arXiv 2203.02155.</li>
+      <li>Quian Quiroga, Rodrigo, Leila Reddy, Gabriel Kreiman, Christof Koch, and Itzhak Fried. 2005. “Invariant Visual Representation by Single Neurons in the Human Brain.” <i>Nature</i> 435 (7045): 1102–7. DOI 10.1038/nature03687.</li>
+      <li>Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, et al. 2021. “Learning Transferable Visual Models From Natural Language Supervision.” Preprint, arXiv 2103.00020.</li>
+      <li>Radford, Alec, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. 2022. “Robust Speech Recognition via Large-Scale Weak Supervision.” Preprint, arXiv 2212.04356.</li>
+      <li>Rafailov, Rafael, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, and Chelsea Finn. 2023. “Direct Preference Optimization: Your Language Model Is Secretly a Reward Model.” Preprint, arXiv 2305.18290.</li>
+      <li>Rumelhart, David E., Geoffrey E. Hinton, and Ronald J. Williams. 1986. “Learning Representations by Back-Propagating Errors.” <i>Nature</i> 323 (6088): 533–36. DOI 10.1038/323533a0.</li>
+      <li>Shazeer, Noam, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean. 2017. “Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer.” Preprint, arXiv 1701.06538.</li>
+      <li>Shianifar, Jonaid, and I. Faiud. 2026. “AI World Cup 2026: Benchmarking Large Language Models for End-to-End Football Tournament Prediction.” Preprint, arXiv 2608.03416.</li>
+      <li>Templeton, Adly, Tom Conerly, Jonathan Marcus, Jack Lindsey, Trenton Bricken, Brian Chen, Adam Pearce, et al. 2024. “Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet.” <i>Transformer Circuits Thread</i>, May 2024.</li>
+      <li>Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. “Attention Is All You Need.” Preprint, arXiv 1706.03762.</li>
+      <li>Vaughan-Nichols, Steven J. 2026. “OK, So Anthropic’s AI Built a C Compiler. That Don’t Impress Me Much.” <i>The Register</i>, February 13, 2026.</li>
+      <li>Wei, Jason, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and Denny Zhou. 2022. “Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.” Preprint, arXiv 2201.11903.</li>
+      <li>Weizenbaum, Joseph. 1966. “ELIZA: A Computer Program for the Study of Natural Language Communication between Man and Machine.” <i>Communications of the ACM</i> 9 (1): 36–45. DOI 10.1145/365153.365168.</li>
     </ul>
+    <div class="citeme">
+      <h2 style="margin:0 0 6px">How to cite this explainer</h2>
+      <p style="margin:0 0 4px"><b>Chicago:</b> VibEdTech, LLC. 2026. <i>Weighted Recipes: From One Neuron to GPT.</i> Interactive explainer, 16 chapters. November 2026.</p>
+      <p style="margin:0 0 4px"><b>APA:</b> VibEdTech, LLC. (2026). <i>Weighted recipes: From one neuron to GPT</i> [Interactive explainer].</p>
+      <p class="small" style="margin:0">In-text: (VibEdTech 2026) in Chicago, or (VibEdTech, LLC, 2026) in APA.</p>
+    </div>
   </section>
 </div>
 
@@ -2375,6 +2435,61 @@ const SVGNS = 'http://www.w3.org/2000/svg';
 document.querySelectorAll('[data-go]').forEach(function (b) {
   b.addEventListener('click', function () { document.getElementById(b.dataset.go).scrollIntoView({ behavior: 'smooth' }); });
 });
+</script>
+
+<script>
+/* ===== Contents navigation ===== */
+(() => {
+  const list = document.getElementById('snList'), nav = document.getElementById('sideNav'), btn = document.getElementById('navBtn'),
+        shade = document.getElementById('navShade'), wide = matchMedia('(min-width: 1200px)');
+  const chapters = [...document.querySelectorAll('section.chapter[id]')];
+  const subs = [];
+  chapters.forEach(sec => {
+    const eb = sec.querySelector('.chapter-head .eyebrow'), h = sec.querySelector('.chapter-head h3') || sec.querySelector('h2');
+    const num = eb ? eb.textContent.replace(/\D+/g, '') : '';
+    const li = document.createElement('li'); li.dataset.sec = sec.id;
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'sn-ch';
+    b.innerHTML = '<b>' + num + '</b><span></span>'; b.querySelector('span').textContent = h ? h.textContent : sec.id;
+    b.addEventListener('click', () => go(sec)); li.appendChild(b);
+    const heads = [...sec.querySelectorAll(':scope > .panel > p.small:first-child, :scope > .cols h2, :scope > .recap h2, :scope > .panel h2, :scope > .callout h2, :scope > div > h2')]
+      .filter(e => e.textContent.trim().length < 70 && !e.closest('.citeme'));
+    if (heads.length) {
+      const ul = document.createElement('ol'); ul.className = 'sn-sub';
+      heads.forEach((e, i) => {
+        if (!e.id) e.id = sec.id + '-s' + (i + 1);
+        const sb = document.createElement('button'); sb.type = 'button'; sb.className = 'sn-s'; sb.textContent = e.textContent.trim();
+        sb.addEventListener('click', () => go(e)); const sli = document.createElement('li'); sli.appendChild(sb); ul.appendChild(sli);
+        subs.push([e, sb, li]);
+      });
+      li.appendChild(ul);
+    }
+    list.appendChild(li);
+  });
+  function setOpen(o) {
+    nav.classList.toggle('open', o); shade.hidden = !o; btn.setAttribute('aria-expanded', o ? 'true' : 'false');
+    if (o) { const c = nav.querySelector('.cur > button') || nav.querySelector('button.sn-ch'); c && c.focus(); }
+  }
+  function go(el) {
+    if (!wide.matches) setOpen(false);
+    el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
+  btn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+  document.getElementById('navClose').addEventListener('click', () => { setOpen(false); btn.focus(); });
+  shade.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); btn.focus(); } });
+  wide.addEventListener('change', () => setOpen(false));
+  // highlight where the reader is
+  function mark() {
+    const y = innerHeight * 0.25; let cur = chapters[0];
+    chapters.forEach(c => { if (c.getBoundingClientRect().top <= y) cur = c; });
+    [...list.children].forEach(li => li.classList.toggle('cur', li.dataset.sec === cur.id));
+    let cs = null; subs.forEach(([e, b, li]) => { b.classList.remove('cur'); if (li.dataset.sec === cur.id && e.getBoundingClientRect().top <= y) cs = b; });
+    if (cs) cs.classList.add('cur');
+    if (wide.matches) { const a = list.querySelector('.cur'); if (a) { const r = a.getBoundingClientRect(), n = nav.getBoundingClientRect(); if (r.top < n.top || r.bottom > n.bottom) a.scrollIntoView({ block: 'nearest' }); } }
+  }
+  let t = null; addEventListener('scroll', () => { if (!t) t = requestAnimationFrame(() => { t = null; mark(); }); }, { passive: true });
+  addEventListener('resize', mark); mark();
+})();
 </script>
 
 </body>
