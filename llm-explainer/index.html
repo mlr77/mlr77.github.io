@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="From one neuron to GPT: an interactive, plain-language explainer of how AI language models work, for anyone who knows basic algebra.">
 <meta property="og:title" content="Weighted Recipes: from one neuron to GPT">
-<meta property="og:description" content="Eleven hands-on chapters on neurons, matrices, attention, training, bias and hallucination.">
+<meta property="og:description" content="Sixteen hands-on chapters on neurons, matrices, attention, training, reasoning, retrieval, bias, hallucination and oversight.">
 <meta property="og:type" content="website">
 <style>
 :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -325,6 +325,33 @@ table.cmp th,table.cmp td{text-align:left;vertical-align:top;padding:9px 10px;bo
 table.cmp thead th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
 
+
+/* new chapters */
+svg.qk,svg.pe,svg.blk{display:block;width:100%;height:auto;max-width:100%}
+.heat{display:grid;grid-template-columns:auto repeat(11,minmax(38px,1fr));gap:3px;align-items:center;font-size:14px;min-width:560px}
+.heat .hd{font-weight:700;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding-right:8px;white-space:nowrap}
+.heat .w{text-align:center;font-weight:700;font-size:13px}
+.heat .c{height:30px;border-radius:5px;background:color-mix(in srgb,var(--amber) calc(var(--a)*100%),var(--stage));border:1px solid var(--line)}
+.bx{fill:var(--stage);stroke:var(--ink);stroke-width:2}
+.bx.a{fill:var(--amber-soft);stroke:var(--amber)} .bx.f{fill:var(--green-soft);stroke:var(--green)} .bx.n{fill:var(--blue-soft);stroke:var(--blue)}
+.bxl{font-size:15px;font-weight:700;fill:var(--ink)}
+.bxs{font-size:12px;fill:var(--muted)}
+.ar{stroke:var(--muted);stroke-width:2;fill:none}
+ol.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:3px solid var(--line);margin-left:6px}
+ol.tl li{position:relative;padding:8px 0 12px 22px;display:grid;grid-template-columns:7.5em 1fr;gap:4px 14px}
+ol.tl li::before{content:"";position:absolute;left:-8px;top:14px;width:13px;height:13px;border-radius:50%;background:var(--stage);border:3px solid var(--amber)}
+ol.tl li.hi::before{background:var(--amber)}
+ol.tl .yr{font-weight:700;font-variant-numeric:tabular-nums;color:var(--amber)}
+ol.tl .nm{font-family:var(--display);font-weight:700;font-size:17px}
+ol.tl .ds{grid-column:2;margin:0;max-width:62ch;font-size:15px}
+ol.tl .ch{grid-column:2;font-size:13px;color:var(--blue);font-weight:700}
+@media (max-width:520px){ol.tl li{grid-template-columns:1fr}ol.tl .ds,ol.tl .ch{grid-column:1}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--stage);display:grid;gap:4px;align-content:start}
+.card h4{margin:0;font-family:var(--display);font-size:17px}
+.card p{margin:0;font-size:14.5px}
+.card .eg{font-size:13.5px;color:var(--muted)}
+
 @media (prefers-reduced-motion: reduce){
   .k,.t,.arrow,#small,#big,.cell,.card-out,.ln,.bar .fill,.chip{transition:none}
   .pt{animation:none;opacity:0}
@@ -335,7 +362,7 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
   <header>
     <div class="eyebrow">How language models work, for anyone who knows basic algebra</div>
     <h1>From one neuron to GPT</h1>
-    <p class="lede">Eleven short, hands-on chapters: how a single neuron decides, how a grid of weights runs thousands of them at once, how those weights are learned, and how that turns into assistants that read, see, listen and sometimes make things up.</p>
+    <p class="lede">Sixteen short, hands-on chapters: how a single neuron decides, how a grid of weights runs thousands of them at once, how those weights are learned, how that turns into assistants that read, see, listen, reason and look things up, and where they still fail.</p>
     <nav class="toc" aria-label="Chapters">
       <a href="#neuron"><b>1</b>The grandma neuron</a>
       <a href="#recipes"><b>2</b>Weighted recipes</a>
@@ -343,11 +370,16 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
       <a href="#meaning"><b>4</b>Words become points</a>
       <a href="#anydata"><b>5</b>Everything becomes numbers</a>
       <a href="#attention"><b>6</b>Words look at each other</a>
-      <a href="#family"><b>7</b>Transformer, BERT, GPT</a>
-      <a href="#experts"><b>8</b>A team of specialists</a>
-      <a href="#size"><b>9</b>Is smaller smarter?</a>
-      <a href="#truth"><b>10</b>Averages, not truth</a>
-      <a href="#shaping"><b>11</b>From raw model to assistant</a>
+      <a href="#block"><b>7</b>Inside one block</a>
+      <a href="#family"><b>8</b>Transformer, BERT, GPT</a>
+      <a href="#history"><b>9</b>Seventy years of talking machines</a>
+      <a href="#experts"><b>10</b>A team of specialists</a>
+      <a href="#size"><b>11</b>Is smaller smarter?</a>
+      <a href="#truth"><b>12</b>Averages, not truth</a>
+      <a href="#shaping"><b>13</b>From raw model to assistant</a>
+      <a href="#thinking"><b>14</b>Thinking before answering</a>
+      <a href="#retrieval"><b>15</b>Looking things up</a>
+      <a href="#failures"><b>16</b>When it fails, and who checks</a>
     </nav>
   </header>
 
@@ -657,10 +689,72 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
     </div>
   </section>
 
+
+  <!-- CHAPTER: inside one block -->
+  <section class="chapter" id="block">
+    <div class="chapter-head">
+      <div class="eyebrow">Chapter 7</div>
+      <h3>Inside one block</h3>
+      <p>Chapter 6 showed what attention does. This chapter opens the box: the three lists every word makes, why a model runs many attentions side by side, how word order gets in, and what one complete layer looks like.</p>
+    </div>
+    <div class="panel">
+      <p class="small" style="margin:0">Queries, keys and values</p>
+      <p style="margin:0;max-width:64ch">Each word makes three lists of numbers with learned recipes. Its <b>query</b> says what it is looking for. Its <b>key</b> says what it offers. Its <b>value</b> is what it hands over if chosen. Turn the query and watch “it” pick a partner.</p>
+      <div class="cols">
+        <svg class="qk" id="qkPlot" viewBox="0 0 340 280" role="img" aria-label="Key arrows for four words and the query arrow for it"></svg>
+        <div style="display:grid;gap:10px;align-content:start">
+          <div class="slider">
+            <label for="qAng">Direction of the query for “it”</label>
+            <input type="range" id="qAng" min="0" max="90" step="1" value="22">
+          </div>
+          <div style="overflow-x:auto"><div class="smx" id="qkTable"></div></div>
+          <div class="readout" id="qkRead"></div>
+        </div>
+      </div>
+      <div class="formula">Attention(Q, K, V) = softmax( Q × K<sup>T</sup> ÷ √d ) × V</div>
+      <p class="small" style="margin:0">In words: multiply each query by every key and add (a match score), divide by the square root of the list length so scores stay tame, turn scores into shares, then blend the values by those shares. Every step is Chapter 2 arithmetic. Two numbers per list here; the original Transformer used 64 per head.</p>
+    </div>
+
+    <div class="panel">
+      <p class="small" style="margin:0">Many heads, each looking for something different</p>
+      <p style="margin:0;max-width:64ch">One attention can only weigh things one way. So a layer runs several at once, called heads, each with its own recipes. The 2017 Transformer used 8 heads per layer. Here is where three imaginary heads send “it”.</p>
+      <div style="overflow-x:auto"><div class="heat" id="heads"></div></div>
+      <p class="small" style="margin:0">Illustrative. Researchers have found real heads that track the previous word, the subject of a sentence, or matching brackets in code, but most heads do mixtures that are harder to name.</p>
+    </div>
+
+    <div class="panel">
+      <p class="small" style="margin:0">Word order</p>
+      <p style="margin:0;max-width:64ch">Attention on its own sees a bag of words: “dog bites man” and “man bites dog” look identical. The fix is to add a position pattern to each word's numbers. The original recipe uses waves of different speeds, so every position gets its own fingerprint.</p>
+      <svg class="pe" id="pePlot" viewBox="0 0 640 230" role="img" aria-label="Wave patterns that give each position a unique fingerprint"></svg>
+      <div class="slider">
+        <label for="pePos">Position in the sentence</label>
+        <input type="range" id="pePos" min="0" max="23" step="1" value="3">
+        <span class="small" id="peLbl"></span>
+      </div>
+      <p class="small" style="margin:0">Each row is one number in the list, waving at its own speed. Read down a column and you get that position's fingerprint. Many newer models use a variation that rotates the query and key instead, but the idea is the same.</p>
+    </div>
+
+    <div class="panel">
+      <p class="small" style="margin:0">One complete layer, and what it costs</p>
+      <svg class="blk" id="blkPlot" viewBox="0 0 760 210" role="img" aria-label="Diagram of one transformer layer: attention, add and normalize, feed-forward, add and normalize"></svg>
+      <ul class="tight" style="max-width:70ch">
+        <li><b>Attention</b> lets words borrow from each other (Chapter 6).</li>
+        <li><b>Feed-forward</b> is a wide layer of the neurons from Chapter 1, applied to each word on its own. In the 2017 model it widened each list from 512 to 2,048 numbers and back.</li>
+        <li><b>Add and normalize</b> keeps a copy of what came in and adds the change on top, then rescales the numbers. That lets dozens of layers stack without the signal fading.</li>
+      </ul>
+      <div class="slider">
+        <label for="ctxN">Words in the input</label>
+        <input type="range" id="ctxN" min="1" max="6" step="0.01" value="3">
+        <span class="small" id="ctxLbl"></span>
+      </div>
+      <div class="readout" id="ctxRead"></div>
+    </div>
+  </section>
+
   <!-- ===================== CHAPTER 4 ===================== -->
   <section class="chapter" id="family">
     <div class="chapter-head">
-      <div class="eyebrow">Chapter 7</div>
+      <div class="eyebrow">Chapter 8</div>
       <h3>One idea, three designs</h3>
       <p>The 2017 Transformer had two halves: a reader and a writer. BERT kept the reader. GPT kept the writer. The biggest difference is simply who is allowed to look at whom.</p>
     </div>
@@ -689,10 +783,25 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
   </section>
 
 
+
+  <!-- CHAPTER: history -->
+  <section class="chapter" id="history">
+    <div class="chapter-head">
+      <div class="eyebrow">Chapter 9</div>
+      <h3>Seventy years of talking machines</h3>
+      <p>Today's assistants sit on top of decades of work. Most of the big jumps came from a new idea about how to represent language, followed by much more data and computing power.</p>
+    </div>
+    <div class="panel">
+      <div class="seg" id="eraTabs" role="group" aria-label="Era"></div>
+      <ol class="tl" id="timeline"></ol>
+      <p class="small" style="margin:0">Companies have stopped publishing the size of most recent models, so this timeline gives sizes only where they were published.</p>
+    </div>
+  </section>
+
   <!-- ===================== CHAPTER 7: experts ===================== -->
   <section class="chapter" id="experts">
     <div class="chapter-head">
-      <div class="eyebrow">Chapter 8</div>
+      <div class="eyebrow">Chapter 10</div>
       <h3>A team of specialists</h3>
       <p>Making a model bigger usually makes every word more expensive to process. A <b>mixture of experts</b> dodges that. It splits part of each layer into many smaller “experts,” and a router sends each word to just a couple of them.</p>
     </div>
@@ -728,7 +837,7 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
   <!-- ===================== CHAPTER 5 ===================== -->
   <section class="chapter" id="size">
     <div class="chapter-head">
-      <div class="eyebrow">Chapter 9</div>
+      <div class="eyebrow">Chapter 11</div>
       <h3>Is smaller smarter?</h3>
       <p>Classic statistics teaches a sensible rule: give a model too many adjustable numbers and it memorizes its examples, like a student who memorizes the answer key and fails the real test. So a smaller model should generalize better. Large networks broke that rule, but only partly.</p>
     </div>
@@ -771,7 +880,7 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
   <!-- ===================== CHAPTER 9: norms & hallucination ===================== -->
   <section class="chapter" id="truth">
     <div class="chapter-head">
-      <div class="eyebrow">Chapter 10</div>
+      <div class="eyebrow">Chapter 12</div>
       <h3>Averages, not truth</h3>
       <p>Everything a model knows comes from the text it was trained on. Its map of meaning settles where its sources, on average, put things. So it learns what those sources tend to say, which is the norm of what they believe, not truth itself.</p>
     </div>
@@ -878,7 +987,7 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
   <!-- ===================== CHAPTER 11: shaping ===================== -->
   <section class="chapter" id="shaping">
     <div class="chapter-head">
-      <div class="eyebrow">Chapter 11</div>
+      <div class="eyebrow">Chapter 13</div>
       <h3>From raw model to assistant</h3>
       <p>The step-downhill training from Chapter 3 happens in stages. Each stage uses different examples, and each changes what the model does with the same question.</p>
     </div>
@@ -926,9 +1035,148 @@ table.cmp tbody th{font-family:var(--display);font-size:16px;white-space:nowrap}
     </div>
   </section>
 
+
+  <!-- CHAPTER: thinking -->
+  <section class="chapter" id="thinking">
+    <div class="chapter-head">
+      <div class="eyebrow">Chapter 14</div>
+      <h3>Thinking before answering</h3>
+      <p>Until 2024, the main way to make a model smarter was to train it longer on more text. Reasoning models added a second lever: let it work through the problem in writing before it commits to an answer.</p>
+    </div>
+    <div class="panel">
+      <p class="demo txt" style="margin:0;border:0;padding:0">A bat and a ball cost $1.10 together. The bat costs $1.00 more than the ball. How much is the ball?</p>
+      <div class="seg" id="thinkMode" role="group" aria-label="How the model answers">
+        <button type="button" data-m="fast" aria-pressed="true">Answer right away</button>
+        <button type="button" data-m="slow" aria-pressed="false">Think first</button>
+      </div>
+      <div class="chat" id="thinkOut" aria-live="polite"></div>
+      <p class="small" style="margin:0">The fast answer is the one most people blurt out, and the most common pattern in text. Writing out the steps gives the model room to catch it.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h2>How models learned to reason</h2>
+        <ul class="tight">
+          <li><b>Chain of thought.</b> Researchers noticed in 2022 that asking a model to “think step by step” improved its answers to math and logic problems.</li>
+          <li><b>Rewarding right answers.</b> OpenAI's o1 (September 2024) was trained with reinforcement learning to produce long internal reasoning before replying. Math and code work well here because answers can be checked automatically.</li>
+          <li><b>Reasoning can emerge.</b> DeepSeek's R1-Zero (January 2025) learned to double-check and backtrack from reinforcement learning alone, with no examples of reasoning to copy.</li>
+          <li><b>Thinking costs money.</b> Longer reasoning means more words generated, so slower and more expensive answers. This is called test-time compute.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>From answering to doing</h2>
+        <p>An <b>agent</b> is a model in a loop: decide on a step, use a tool (search, run code, click a button), read the result, decide the next step. That turns an assistant from something that writes into something that acts.</p>
+        <p>Reasoning has its own failure: <b>overthinking</b>. A model can reach the right answer early, keep going, and talk itself out of it.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <p class="small" style="margin:0">Why long tasks are hard: small errors pile up</p>
+      <div class="slider"><label for="stepRel">Chance each step is right</label><input type="range" id="stepRel" min="0.8" max="0.999" step="0.001" value="0.95"><span class="small" id="stepRelLbl"></span></div>
+      <div class="slider"><label for="stepN">Steps in the task</label><input type="range" id="stepN" min="1" max="100" step="1" value="20"><span class="small" id="stepNLbl"></span></div>
+      <svg class="chart" id="pileChart" viewBox="0 0 800 300" role="img" aria-label="Chance a whole task succeeds as steps increase"></svg>
+      <div class="readout" id="pileRead"></div>
+    </div>
+  </section>
+
+  <!-- CHAPTER: retrieval -->
+  <section class="chapter" id="retrieval">
+    <div class="chapter-head">
+      <div class="eyebrow">Chapter 15</div>
+      <h3>Looking things up</h3>
+      <p>Retrieval-augmented generation (RAG) gives a model your documents at the moment you ask. It reuses the word map from Chapter 4: questions and passages become points, and the closest passages get pasted into the prompt.</p>
+    </div>
+    <div class="panel">
+      <svg class="blk" id="ragFlow" viewBox="0 0 760 120" role="img" aria-label="Question, turned into numbers, nearest passages found, added to the prompt, answer with sources"></svg>
+      <div class="seg" id="ragQs" role="group" aria-label="Question"></div>
+      <div class="checks"><label><input type="checkbox" id="ragDef"> The handbook spells out what TDY means</label></div>
+      <div class="cols">
+        <div class="bars" id="ragBars"></div>
+        <div style="display:grid;gap:8px;align-content:start">
+          <p class="small" style="margin:0">What gets added to the prompt</p>
+          <div class="doc" id="ragPrompt"></div>
+        </div>
+      </div>
+      <div class="readout" id="ragRead"></div>
+      <p class="small" style="margin:0">A made-up employee handbook. Closeness is <b>cosine similarity</b>: it compares the direction two lists of numbers point, ignoring their length, where 1.00 means the same direction. Real systems use hundreds of numbers per passage and fast search indexes to check millions of passages.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h2>Write documents a retriever can find</h2>
+        <ul class="tight">
+          <li><b>One topic per document,</b> with a title that says what it covers.</li>
+          <li><b>A one-sentence summary under each heading.</b> It gives the passage a clear position on the map.</li>
+          <li><b>Spell out abbreviations</b> the first time. The model does not know your organization's shorthand, as the TDY toggle shows.</li>
+          <li><b>Describe pictures in words.</b> A retriever cannot search an image.</li>
+          <li><b>Keep steps numbered and connected</b> (“After step 2, …”), since a passage may be read without its neighbors.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Check how your tool handles tables</h2>
+        <p>Many retrieval guides advise turning wide tables into short bulleted statements. Splitters read left to right and can cut a row away from its column headers. Test a few real questions against your own documents before restructuring everything.</p>
+        <p class="small">Retrieval fixes missing facts, not reasoning. If the right passage is never found, the model answers from memory anyway, and just as confidently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER: failures -->
+  <section class="chapter" id="failures">
+    <div class="chapter-head">
+      <div class="eyebrow">Chapter 16</div>
+      <h3>When it fails, and who checks</h3>
+      <p>Language models fail in patterns that don't go away with the next upgrade. Knowing the patterns, and deciding who reviews the output, matters more than any single model choice.</p>
+    </div>
+    <div class="cards" id="failCards"></div>
+
+    <div class="panel">
+      <p class="small" style="margin:0">Case study: forecasting the 2026 World Cup</p>
+      <p style="margin:0;max-width:64ch">In July 2026, researchers had 10 AI assistants predict the entire 2026 FIFA World Cup in advance: 72 group matches, the group tables and the knockout bracket. Getting individual matches right turned out to say almost nothing about getting the tournament right.</p>
+      <svg class="chart" id="wcChart" viewBox="0 0 800 480" role="img" aria-label="Points per model, split into group matches, group standings and knockout bracket"></svg>
+      <div class="lg" id="wcLegend"></div>
+      <ul class="tight" style="max-width:72ch">
+        <li><b>The bracket decided everything.</b> Total score tracked knockout points almost perfectly (correlation 0.99) and group-match points not at all (0.06).</li>
+        <li><b>Best at matches, sixth overall.</b> Claude Sonnet 4.6 called the most group results (64%) but finished sixth. GPT-5.5 Thinking ranked eighth on matches but won, as the only model to pick Spain as champion.</li>
+        <li><b>Confidence meant nothing.</b> Each model rated its own confidence. Those ratings had no relationship with accuracy (correlation −0.06). The most confident model finished seventh.</li>
+      </ul>
+      <p class="small" style="margin:0">Source: Shianifar and Faiud, “AI World Cup 2026,” July 31, 2026. One tournament is a small sample; the pattern, not the ranking, is the lesson.</p>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h2>Three comforting ideas that don't hold</h2>
+        <ul class="tight">
+          <li><b>“The next model will fix it.”</b> An upgrade is a different set of odds, not a bug fix. Overall scores improve, but specific tasks can get worse, so every upgrade needs retesting.</li>
+          <li><b>“People make mistakes too.”</b> A person's mistakes cluster where their knowledge runs out, so their track record predicts their next job. A model's mistakes are jagged: strong on a hard task, wrong on an easy version of it.</li>
+          <li><b>“The tests pass.”</b> When the same model writes the code and its tests from a vague spec, both can share the same misunderstanding. In 2026, 16 Claude agents built a C compiler that compiled the Linux kernel, yet a basic Hello World failed out of the box because it didn't know where the system's C library was.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Who should approve AI output</h2>
+        <ul class="tight">
+          <li><b>Someone who could have made it without AI.</b> Otherwise the review is a guess.</li>
+          <li><b>An expert from each field it touches,</b> for example legal, technical and business.</li>
+          <li><b>Label unchecked output as a draft</b> until a person has reviewed it.</li>
+          <li><b>Keep documentation readable by people.</b> If you need a model to explain a document, you are now checking a second, unverified output.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="small" style="margin:0">Review is the bottleneck</p>
+      <div class="slider"><label for="genRate">AI drafts produced per day</label><input type="range" id="genRate" min="5" max="200" step="5" value="60"><span class="small" id="genLbl"></span></div>
+      <div class="slider"><label for="revRate">Drafts experts can properly review per day</label><input type="range" id="revRate" min="5" max="100" step="5" value="25"><span class="small" id="revLbl"></span></div>
+      <div class="readout" id="backlogRead"></div>
+    </div>
+  </section>
+
   <section class="chapter" id="reading">
     <h2>Further reading</h2>
     <ul class="refs">
+      <li><a href="https://dl.acm.org/doi/10.1145/365153.365168">ELIZA</a> (Weizenbaum, 1966)</li>
+      <li><a href="https://www.bioinf.jku.at/publications/older/2604.pdf">Long Short-Term Memory</a> (Hochreiter &amp; Schmidhuber, 1997)</li>
+      <li><a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought Prompting Elicits Reasoning</a> (Wei et al., 2022)</li>
+      <li><a href="https://arxiv.org/abs/2501.12948">DeepSeek-R1</a> (2025)</li>
+      <li><a href="https://arcprize.org/blog/oai-o3-pub-breakthrough">OpenAI o3 on ARC-AGI</a> (ARC Prize, 2024)</li>
+      <li><a href="https://arxiv.org/abs/2608.03416">AI World Cup 2026: Benchmarking LLMs for End-to-End Football Tournament Prediction</a> (Shianifar &amp; Faiud, 2026)</li>
+      <li><a href="https://www.theregister.com/2026/02/13/anthropic_c_compiler">OK, so Anthropic's AI built a C compiler</a> (The Register, 2026)</li>
       <li><a href="https://www.nature.com/articles/323533a0">Learning representations by back-propagating errors</a> (Rumelhart, Hinton &amp; Williams, 1986)</li>
       <li><a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a> (top-p sampling, 2019)</li>
       <li><a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">Defeating Nondeterminism in LLM Inference</a> (Thinking Machines Lab, 2025)</li>
@@ -1908,6 +2156,219 @@ const SVGNS = 'http://www.w3.org/2000/svg';
     document.getElementById('goalRead').innerHTML = '<span class="small">A common order: try prompting first, add retrieval when the model needs facts it doesn’t have, and fine-tune when you need a behavior that prompting can’t hold steady.</span>';
   }
   dec();
+})();
+</script>
+
+<script>
+/* ===== Inside one block ===== */
+(() => {
+  const K = [['animal', [1.9, 0.5]], ['street', [0.45, 1.9]], ['cross', [1.2, 1.25]], ['The', [0.35, 0.3]]];
+  const ang = document.getElementById('qAng'), plot = document.getElementById('qkPlot');
+  const X = v => 40 + v * 120, Y = v => 260 - v * 120;
+  function render() {
+    const t = +ang.value * Math.PI / 180, q = [2 * Math.cos(t), 2 * Math.sin(t)];
+    const sc = K.map(([, k]) => q[0] * k[0] + q[1] * k[1]);
+    const z = sc.map(s => s / Math.SQRT2), m = Math.max(...z), e = z.map(v => Math.exp(v - m)), S = e.reduce((a, b) => a + b, 0), p = e.map(v => v / S);
+    let s = `<line class="gridl" x1="40" y1="260" x2="300" y2="260"/><line class="gridl" x1="40" y1="260" x2="40" y2="20"/>`;
+    K.forEach(([w, k], i) => { s += `<line x1="${X(0)}" y1="${Y(0)}" x2="${X(k[0])}" y2="${Y(k[1])}" stroke="var(--amber)" stroke-width="${2 + p[i] * 6}" stroke-linecap="round"/><text x="${X(k[0]) + 6}" y="${Y(k[1]) - 4}" class="axl" style="font-weight:700;fill:var(--ink)">${w}</text>`; });
+    s += `<line x1="${X(0)}" y1="${Y(0)}" x2="${X(q[0])}" y2="${Y(q[1])}" stroke="var(--blue)" stroke-width="5" stroke-linecap="round"/><text x="${X(q[0]) + 6}" y="${Y(q[1]) - 8}" class="axl" style="font-weight:700;fill:var(--blue)">query</text>`;
+    plot.innerHTML = s;
+    const f = n => (n < 0 ? '−' : '') + Math.abs(n).toFixed(2);
+    let h = '<span class="h">Word</span><span class="h">Score</span><span class="h">÷ √2</span><span class="h">Share</span><span class="h"></span>';
+    const best = p.indexOf(Math.max(...p));
+    K.forEach(([w], i) => { h += `<span class="wn">${w}</span><span>${f(sc[i])}</span><span>${f(z[i])}</span><div class="track"><div class="fill${i === best ? ' top' : ''}" style="width:${(p[i] * 100).toFixed(1)}%"></div></div><span>${Math.round(p[i] * 100)}%</span>`; });
+    document.getElementById('qkTable').innerHTML = h;
+    document.getElementById('qkRead').innerHTML = `The query points closest to <b>${K[best][0]}</b>'s key, so “it” takes ${Math.round(p[best] * 100)}% of its new meaning from ${K[best][0]}'s value. Arrows pointing the same way multiply to big scores.`;
+  }
+  ang.addEventListener('input', render); render();
+
+  // heads heatmap
+  const W = ['The', 'animal', "didn't", 'cross', 'the', 'street', 'because', 'it', 'was', 'too', 'tired'];
+  const H = [['Who is “it”?', [.03, .62, .02, .03, .02, .14, .03, .07, .01, .01, .02]],
+             ['Word just before', [0, .01, .01, .02, .02, .05, .82, .04, .01, .01, .01]],
+             ['How it is described', [.01, .08, .02, .02, .01, .03, .03, .05, .12, .18, .45]]];
+  let g = '<span></span>' + W.map(w => `<span class="w">${w}</span>`).join('');
+  H.forEach(([n, a]) => { g += `<span class="hd">${n}</span>` + a.map((v, i) => `<span class="c" style="--a:${Math.min(1, v * 1.3).toFixed(2)}" title="${W[i]}: ${Math.round(v * 100)}%"></span>`).join(''); });
+  document.getElementById('heads').innerHTML = g;
+
+  // positional encoding
+  const pe = document.getElementById('pePlot'), pos = document.getElementById('pePos'), D = 10, P = 24;
+  const val = (p, i) => (i % 2 ? Math.cos : Math.sin)(p / Math.pow(60, (2 * Math.floor(i / 2)) / D));
+  function drawPE() {
+    const cur = +pos.value, cw = 22, ch = 15, ox = 70, oy = 22;
+    let s = `<text class="axl" x="${ox}" y="14">position →</text>`;
+    for (let i = 0; i < D; i++) {
+      s += `<text class="axl" x="${ox - 8}" y="${oy + i * ch + 11}" text-anchor="end" style="font-size:11px">#${i + 1}</text>`;
+      for (let p = 0; p < P; p++) {
+        const v = val(p, i);
+        s += `<rect x="${ox + p * cw}" y="${oy + i * ch}" width="${cw - 2}" height="${ch - 2}" rx="2" fill="${v >= 0 ? 'var(--amber)' : 'var(--blue)'}" fill-opacity="${(0.15 + Math.abs(v) * 0.8).toFixed(2)}"/>`;
+      }
+    }
+    s += `<rect x="${ox + cur * cw - 2}" y="${oy - 3}" width="${cw + 2}" height="${D * ch + 4}" rx="4" fill="none" stroke="var(--ink)" stroke-width="2.5"/>`;
+    pe.innerHTML = s;
+    document.getElementById('peLbl').textContent = `word ${cur + 1}`;
+  }
+  pos.addEventListener('input', drawPE); drawPE();
+
+  // block diagram
+  const box = (x, w, c, t, sub) => `<rect class="bx ${c}" x="${x}" y="60" width="${w}" height="70" rx="10"/><text class="bxl" x="${x + w / 2}" y="${sub ? 92 : 100}" text-anchor="middle">${t}</text>${sub ? `<text class="bxs" x="${x + w / 2}" y="112" text-anchor="middle">${sub}</text>` : ''}`;
+  const arr = (x1, x2) => `<line class="ar" x1="${x1}" y1="95" x2="${x2 - 6}" y2="95" marker-end="url(#blkA)"/>`;
+  document.getElementById('blkPlot').innerHTML = `<defs><marker id="blkA" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--muted)"/></marker></defs>
+    <text class="bxs" x="10" y="100">words in</text>${arr(70, 100)}${box(100, 130, 'a', 'Attention', 'words borrow')}${arr(230, 260)}${box(260, 120, 'n', 'Add &amp;', 'normalize')}${arr(380, 410)}${box(410, 130, 'f', 'Feed-forward', 'neurons per word')}${arr(540, 570)}${box(570, 120, 'n', 'Add &amp;', 'normalize')}${arr(690, 720)}<text class="bxs" x="722" y="100">out</text>
+    <path class="ar" d="M85 95 V30 H320 V58" marker-end="url(#blkA)" stroke-dasharray="5 5"/><path class="ar" d="M395 95 V30 H630 V58" marker-end="url(#blkA)" stroke-dasharray="5 5"/>
+    <text class="bxs" x="200" y="24" text-anchor="middle">keep a copy, add the change</text><text class="bxs" x="512" y="24" text-anchor="middle">keep a copy, add the change</text>
+    <text class="bxs" x="380" y="165" text-anchor="middle">Repeat: 6 layers in the 2017 Transformer, dozens in today's large models</text>`;
+
+  const ctx = document.getElementById('ctxN');
+  function cost() {
+    const n = Math.round(Math.pow(10, +ctx.value)), pairs = n * n;
+    const fmt = v => v >= 1e12 ? (v / 1e12).toFixed(1) + ' trillion' : v >= 1e9 ? (v / 1e9).toFixed(1) + ' billion' : v >= 1e6 ? (v / 1e6).toFixed(1) + ' million' : v.toLocaleString();
+    document.getElementById('ctxLbl').textContent = n.toLocaleString() + ' words';
+    document.getElementById('ctxRead').innerHTML = `Every word scores every other word, so attention does <b>${fmt(pairs)}</b> match scores per head, per layer. Ten times the words means a hundred times the work. That is why long documents are slow and expensive, and why researchers keep inventing shortcuts.`;
+  }
+  ctx.addEventListener('input', cost); cost();
+})();
+
+/* ===== History ===== */
+(() => {
+  const E = [
+    ['early', '1954', 'Georgetown–IBM experiment', 'A computer translates about 60 Russian sentences into English using hand-written rules and a 250-word vocabulary.', ''],
+    ['early', '1966', 'ELIZA', 'Joseph Weizenbaum\'s program imitates a therapist by matching patterns and echoing words back. Many users still felt understood.', ''],
+    ['deep', '1997', 'LSTM networks', 'Neural networks with a memory cell read text one word at a time. They powered speech recognition and translation for two decades.', ''],
+    ['deep', '2013', 'word2vec', 'Words become points on a map, and directions carry meaning.', 'Chapter 4'],
+    ['trans', '2017', 'The Transformer', '“Attention Is All You Need” drops one-word-at-a-time reading. Every word looks at every other word at once, so training runs in parallel.', 'Chapters 6–7', true],
+    ['trans', '2018', 'BERT and GPT-1', 'Google keeps the reader half; OpenAI keeps the writer half.', 'Chapter 8'],
+    ['trans', '2020', 'GPT-3', '175 billion weights. It can do new tasks from a few examples in the prompt.', 'Chapter 11'],
+    ['asst', 'Nov 2022', 'ChatGPT', 'Instruction and preference tuning turn a text predictor into an assistant. An estimated 100 million users within two months.', 'Chapter 13', true],
+    ['asst', '2023', 'GPT-4, Llama, Mixtral', 'Models start reading images. Open-weight models anyone can download catch up. Mixture-of-experts goes mainstream.', 'Chapters 5, 10'],
+    ['asst', 'Sep 2024', 'OpenAI o1', 'A model trained to reason at length before it answers.', 'Chapter 14', true],
+    ['asst', 'Dec 2024', 'OpenAI o3', 'Scores 87.5% on the ARC-AGI-1 puzzle test in its highest-compute setting.', 'Chapter 14'],
+    ['asst', 'Jan 2025', 'DeepSeek-R1', 'An open-weight reasoning model. Its R1-Zero variant learned to check its own work from reinforcement learning alone.', 'Chapter 14'],
+    ['asst', '2025–26', 'Agents', 'Models from many labs use tools, browse, write and run code, and carry out multi-step tasks.', 'Chapters 14, 16']
+  ];
+  const ERA = [['all', 'All'], ['early', 'Rules'], ['deep', 'Neural networks'], ['trans', 'Transformers'], ['asst', 'Assistants']];
+  const tabs = document.getElementById('eraTabs'), ol = document.getElementById('timeline');
+  let cur = 'all';
+  ERA.forEach(([k, n]) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = n; b.dataset.e = k; b.addEventListener('click', () => { cur = k; render(); }); tabs.appendChild(b); });
+  function render() {
+    [...tabs.children].forEach(b => b.setAttribute('aria-pressed', b.dataset.e === cur ? 'true' : 'false'));
+    ol.innerHTML = E.filter(e => cur === 'all' || e[0] === cur).map(([, y, n, d, c, hi]) => `<li class="${hi ? 'hi' : ''}"><span class="yr">${y}</span><span class="nm">${n}</span><p class="ds">${d}</p>${c ? `<span class="ch">${c}</span>` : ''}</li>`).join('');
+  }
+  render();
+})();
+
+/* ===== Thinking ===== */
+(() => {
+  const out = document.getElementById('thinkOut'), btns = document.querySelectorAll('#thinkMode button');
+  let timer = null;
+  const STEPS = ['Let the ball cost b. Then the bat costs b + 1.00.', 'Together: b + (b + 1.00) = 1.10.', 'So 2b + 1.00 = 1.10, which means 2b = 0.10.', 'b = 0.05. Check: 0.05 + 1.05 = 1.10, and 1.05 is 1.00 more than 0.05.'];
+  function show(m) {
+    clearInterval(timer);
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.m === m ? 'true' : 'false'));
+    if (m === 'fast') { out.innerHTML = '<div class="bubble m"><span class="who">Model, instant reply</span>The ball costs <b>10 cents</b>.</div><p class="small" style="margin:0">Wrong: then the bat would be $1.10 and the total $1.20.</p>'; return; }
+    out.innerHTML = '<div class="bubble m" id="thinkB"><span class="who">Model, thinking</span></div>';
+    const b = document.getElementById('thinkB'); let i = 0;
+    const add = () => { if (i < STEPS.length) { b.insertAdjacentHTML('beforeend', `<div class="small" style="margin:2px 0">${STEPS[i++]}</div>`); } else { b.insertAdjacentHTML('beforeend', '<div style="margin-top:6px">The ball costs <b>5 cents</b>.</div>'); clearInterval(timer); } };
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { while (i <= STEPS.length) add(); return; }
+    add(); timer = setInterval(add, 900);
+  }
+  btns.forEach(b => b.addEventListener('click', () => show(b.dataset.m)));
+  show('fast');
+
+  const rel = document.getElementById('stepRel'), nEl = document.getElementById('stepN'), svg = document.getElementById('pileChart');
+  function pile() {
+    const r = +rel.value, n = +nEl.value, X0 = 70, X1 = 770, Y0 = 250, Y1 = 30;
+    const sx = k => X0 + (k - 1) / 99 * (X1 - X0), sy = v => Y0 - v * (Y0 - Y1);
+    let s = '';
+    [0, .25, .5, .75, 1].forEach(v => s += `<line class="gridl" x1="${X0}" x2="${X1}" y1="${sy(v)}" y2="${sy(v)}"/><text class="axl" x="${X0 - 8}" y="${sy(v) + 5}" text-anchor="end">${v * 100}%</text>`);
+    [1, 25, 50, 75, 100].forEach(k => s += `<text class="axl" x="${sx(k)}" y="${Y0 + 22}" text-anchor="middle">${k}</text>`);
+    s += `<text class="axl" x="${(X0 + X1) / 2}" y="${Y0 + 44}" text-anchor="middle">steps in the task</text>`;
+    let d = ''; for (let k = 1; k <= 100; k++) d += (k > 1 ? 'L' : 'M') + sx(k).toFixed(1) + ' ' + sy(Math.pow(r, k)).toFixed(1);
+    s += `<path class="curve now" d="${d}"/><circle cx="${sx(n)}" cy="${sy(Math.pow(r, n))}" r="8" fill="var(--amber)"/>`;
+    svg.innerHTML = s;
+    const tot = Math.pow(r, n);
+    document.getElementById('stepRelLbl').textContent = (r * 100).toFixed(1) + '%';
+    document.getElementById('stepNLbl').textContent = n + ' steps';
+    document.getElementById('pileRead').innerHTML = `${(r * 100).toFixed(1)}% per step sounds reliable. Over ${n} steps the whole task succeeds only <b>${(tot * 100).toFixed(tot < 0.1 ? 1 : 0)}%</b> of the time (${(r * 100).toFixed(1)}% multiplied by itself ${n} times). Agents that check their work and recover from mistakes do better than this simple math, but long chains still magnify small errors.`;
+  }
+  [rel, nEl].forEach(e => e.addEventListener('input', pile)); pile();
+})();
+
+/* ===== Retrieval ===== */
+(() => {
+  const C = [
+    ['Booking travel', 'Book flights through the travel portal at least 14 days ahead.', [.9, .2, .1]],
+    ['TDY claims', 'Submit TDY receipts within 5 days of returning.', [.2, .3, .6], 'Temporary duty (TDY) travel claims: submit receipts within 5 days of returning.', [.85, .6, .05]],
+    ['Meal limits', 'Meals are reimbursed up to $60 per day.', [.4, .9, 0]],
+    ['Laptop setup', 'Install the VPN before your first login from home.', [0, 0, 1]],
+    ['Password resets', 'Use the self-service portal to reset your password.', [0, .05, .95]],
+    ['Holidays', 'Offices close on federal holidays.', [.1, .05, .5]]
+  ];
+  const Q = [['How do I get paid back for a work trip?', [.8, .7, 0], 1], ['My laptop won\'t connect from home', [0, .05, 1], 3], ['What is the daily meal allowance?', [.3, 1, 0], 2]];
+  const qs = document.getElementById('ragQs'), def = document.getElementById('ragDef');
+  let qi = 0;
+  Q.forEach(([t], i) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = t; b.addEventListener('click', () => { qi = i; render(); }); qs.appendChild(b); });
+  const cos = (a, b) => { const d = a.reduce((s, v, i) => s + v * b[i], 0); return d / (Math.hypot(...a) * Math.hypot(...b)); };
+  function render() {
+    [...qs.children].forEach((b, i) => b.setAttribute('aria-pressed', i === qi ? 'true' : 'false'));
+    const [qt, qv, ideal] = Q[qi];
+    const rows = C.map((c, i) => { const v = def.checked && c[4] ? c[4] : c[2]; return { i, name: c[0], text: def.checked && c[3] ? c[3] : c[1], s: cos(qv, v) }; }).sort((a, b) => b.s - a.s);
+    const top = rows.slice(0, 2);
+    document.getElementById('ragBars').innerHTML = rows.map((r, k) => `<div class="bar${k < 2 ? ' top' : ''}"><span>${r.name}</span><div class="track"><div class="fill" style="width:${Math.max(0, r.s * 100).toFixed(0)}%"></div></div><span>${r.s.toFixed(2)}</span></div>`).join('');
+    document.getElementById('ragPrompt').innerHTML = `Answer using only these passages:<br>1. ${top[0].text}<br>2. ${top[1].text}<br>Question: ${qt}`;
+    const hit = top.some(r => r.i === ideal);
+    document.getElementById('ragRead').innerHTML = hit
+      ? `The passage that answers the question (<b>${C[ideal][0]}</b>) made the top two, so the model can answer from it and cite it.`
+      : `The passage that actually answers this (<b>${C[ideal][0]}</b>) was not retrieved: the handbook never says what TDY means, so its numbers don't point toward “trip.” The model will answer without it. Tick the box above.`;
+  }
+  def.addEventListener('change', render); render();
+  const f = document.getElementById('ragFlow');
+  const bx = (x, w, c, t) => `<rect class="bx ${c}" x="${x}" y="30" width="${w}" height="56" rx="10"/><text class="bxl" x="${x + w / 2}" y="63" text-anchor="middle" style="font-size:13px">${t}</text>`;
+  const ar = (a, b) => `<line class="ar" x1="${a}" y1="58" x2="${b - 6}" y2="58" marker-end="url(#ragA)"/>`;
+  f.innerHTML = `<defs><marker id="ragA" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--muted)"/></marker></defs>${bx(0, 120, 'n', 'Question')}${ar(120, 150)}${bx(150, 130, '', 'Into numbers')}${ar(280, 310)}${bx(310, 140, 'a', 'Find closest')}${ar(450, 480)}${bx(480, 120, '', 'Add to prompt')}${ar(600, 630)}${bx(630, 128, 'f', 'Answer + source')}`;
+})();
+
+/* ===== Failures ===== */
+(() => {
+  const F = [
+    ['Jagged abilities', 'Strong on a hard problem, wrong on an easier version of it.', 'Solves a calculus question, then slips on the arithmetic inside it.'],
+    ['Confident errors', 'Wrong answers written in the same polished tone as right ones.', 'A made-up citation formatted perfectly.'],
+    ['Overthinking', 'Finds the right answer, keeps reasoning, and abandons it.', 'Correct at step 3, talked out of it by step 12.'],
+    ['Errors pile up', 'An early mistake gets built on by every later step.', 'One wrong number at the top of a long calculation.'],
+    ['Instruction drift', 'Follows a rule at first, then gradually stops, even though the rule is still in view.', '“No more than 100 words” holds for three replies, then slips.'],
+    ['Silent guesses', 'Picks one meaning of an unclear request without asking.', '“Summarize the report” when there are two reports.'],
+    ['Answers anyway', 'Responds to a question with no real answer or a false premise.', 'Explains “why” something happened that never did.'],
+    ['Fragile phrasing', 'A tiny change in wording changes the quality of the answer.', 'Adding “please” or reordering two sentences.']
+  ];
+  document.getElementById('failCards').innerHTML = F.map(([t, d, e]) => `<div class="card"><h4>${t}</h4><p>${d}</p><p class="eg">${e}</p></div>`).join('');
+
+  const M = [['GPT-5.5 Thinking', 254, 248, 242], ['GPT-5.5', 261, 264, 192], ['Gemini', 259, 248, 192], ['Qwen 3.7', 270, 221, 196], ['DeepSeek', 247, 246, 106],
+             ['Claude Sonnet 4.6', 268, 255, 68], ['Mistral Medium 3.5', 246, 248, 74], ['Perplexity', 257, 257, 38], ['Perplexity Pro', 270, 260, 0], ['Grok', 257, 239, 0]];
+  const svg = document.getElementById('wcChart'), X0 = 170, X1 = 760, max = 800, bh = 26, gap = 13, Y0 = 30;
+  const sx = v => X0 + v / max * (X1 - X0);
+  const COL = ['var(--blue)', 'var(--muted)', 'var(--green)'];
+  let s = '';
+  [0, 200, 400, 600, 800].forEach(v => s += `<line class="gridl" x1="${sx(v)}" x2="${sx(v)}" y1="${Y0 - 8}" y2="${Y0 + M.length * (bh + gap)}"/><text class="axl" x="${sx(v)}" y="${Y0 + M.length * (bh + gap) + 18}" text-anchor="middle">${v}</text>`);
+  M.forEach(([n, a, b, c], i) => {
+    const y = Y0 + i * (bh + gap); let x = 0;
+    s += `<text class="axl" x="${X0 - 10}" y="${y + bh / 2 + 5}" text-anchor="end" style="fill:var(--ink);font-weight:700">${i + 1}. ${n}</text>`;
+    [a, b, c].forEach((v, k) => { if (v) s += `<rect x="${sx(x)}" y="${y}" width="${sx(x + v) - sx(x) - 1}" height="${bh}" fill="${COL[k]}" fill-opacity="${k === 1 ? .55 : .9}" rx="3"/>`; x += v; });
+    s += `<text class="axl" x="${sx(x) + 6}" y="${y + bh / 2 + 5}" style="fill:var(--ink);font-weight:700">${x}</text>`;
+  });
+  s += `<text class="axl" x="${(X0 + X1) / 2}" y="${Y0 + M.length * (bh + gap) + 40}" text-anchor="middle">total points</text>`;
+  svg.innerHTML = s;
+  document.getElementById('wcLegend').innerHTML = ['Group matches', 'Group standings', 'Knockout bracket'].map((t, k) => `<span><i style="background:${COL[k]};opacity:${k === 1 ? .55 : .9}"></i>${t}</span>`).join('');
+
+  const g = document.getElementById('genRate'), r = document.getElementById('revRate');
+  function backlog() {
+    const a = +g.value, b = +r.value, left = Math.max(0, (a - b) * 20);
+    document.getElementById('genLbl').textContent = a + ' per day';
+    document.getElementById('revLbl').textContent = b + ' per day';
+    document.getElementById('backlogRead').innerHTML = left
+      ? `After four working weeks, <b>${left.toLocaleString()}</b> drafts are waiting for review. The tempting fix is to review faster and less carefully, which quietly turns drafts into unchecked decisions. The safer fix is to produce only as much as experts can check.`
+      : `Review keeps up. Every draft gets a real check, and the extra review time can go to the riskiest ones.`;
+  }
+  [g, r].forEach(e => e.addEventListener('input', backlog)); backlog();
 })();
 </script>
 
